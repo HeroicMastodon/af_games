@@ -28,6 +28,13 @@ class DeckState extends ValueNotifier<Deck> {
     value = generateFreshDeck();
   }
 
+  fill(List<PlayingCard> cards) {
+    value = value.copyWith(cards: cards);
+  }
+
+  bool get isEmpty => value.cards.isEmpty;
+  bool get isNotEmpty => value.cards.isNotEmpty;
+
   void shuffle([int iterations = 3]) {
     var newCards = value.cards.toList();
     final rng = Random(DateTime.now().millisecondsSinceEpoch);

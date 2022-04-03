@@ -1,10 +1,11 @@
+import 'package:af_games/solitaire/models/card_source/card_source.dart';
 import 'package:af_games/solitaire/models/playing_card/playing_card.dart';
 import 'package:flutter/material.dart';
 import 'package:tuple/tuple.dart';
 
 import 'pile.dart';
 
-class PileState extends ValueNotifier<Pile> {
+class PileState extends ValueNotifier<Pile> implements CardSource {
   static const int _maxVisible = 3;
 
   PileState(Pile value) : super(value);
@@ -19,6 +20,8 @@ class PileState extends ValueNotifier<Pile> {
 
     return value.visible.last;
   }
+
+  List<PlayingCard> get allCards => value.hidden + value.visible;
 
   reset() {
     _applyChanges([], []);
@@ -68,5 +71,11 @@ class PileState extends ValueNotifier<Pile> {
     List<PlayingCard> visibleCopy,
   ) {
     value = value.copyWith(hidden: hiddenCopy, visible: visibleCopy);
+  }
+
+  @override
+  removeCard(PlayingCard card) {
+    // TODO: implement removeCard
+    throw UnimplementedError();
   }
 }
