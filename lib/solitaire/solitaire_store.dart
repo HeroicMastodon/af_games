@@ -10,22 +10,39 @@ class SolitaireStore {
   ActionResult takeAction(SolitaireAction action) {
     final result = action.when(
       draw: () {
-        return const ActionResult.failed("not implemented");
+        state.drawCard();
+        return const ActionResult.success();
       },
       newGame: () {
-        return const ActionResult.failed("not implemented");
+        state.startNewGame();
+        return const ActionResult.success();
       },
       autoMove: (card, source) {
-        return const ActionResult.failed("not implemented");
+        final destination = state.findValidDestination(card, source);
+
+        if (destination == null) {
+          return const ActionResult.failed("No valid moves for this card");
+        }
+
+        state.moveCardToDestination(card, source, destination);
+
+        return const ActionResult.success();
       },
       selectCard: (card, source) {
         return const ActionResult.failed("not implemented");
       },
       moveCard: (card, source, destination) {
-        return const ActionResult.failed("not implemented");
+        final moved = state.moveCardToDestination(card, source, destination);
+        return moved
+            ? const ActionResult.success()
+            : const ActionResult.failed("invalid move");
       },
       autoComplete: () {
-        return const ActionResult.failed("not implemented");
+        final complete = state.autoComplete();
+        return complete
+            ? const ActionResult.success()
+            : const ActionResult.failed(
+                "Cannot complete; Some cards are still hidden");
       },
       undo: () {
         return const ActionResult.failed("not implemented");

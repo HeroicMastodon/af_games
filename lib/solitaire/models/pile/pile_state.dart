@@ -23,6 +23,8 @@ class PileState extends ValueNotifier<Pile> implements CardSource {
 
   List<PlayingCard> get allCards => value.hidden + value.visible;
 
+  bool get isEmpty => value.hidden.isEmpty && value.visible.isEmpty;
+
   reset() {
     _applyChanges([], []);
   }

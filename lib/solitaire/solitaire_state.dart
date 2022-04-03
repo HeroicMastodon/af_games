@@ -118,12 +118,12 @@ class SolitaireState {
 
   unSelectCard() => selectedCard.value = null;
 
-  moveCardToDestination(
+  bool moveCardToDestination(
     PlayingCard card,
     CardSource source,
     CardDestination destination,
   ) {
-    if (!_canMoveCardToDestination(card, destination)) return;
+    if (!_canMoveCardToDestination(card, destination)) return false;
     var removedCards = source.removeCard(card);
     destination.addCards(removedCards);
 
@@ -133,6 +133,8 @@ class SolitaireState {
     else if (source is PileState && destination is CardStackState) {
       score.cardAddedToStack();
     }
+
+    return true;
   }
 
   CardDestination? findValidDestination(PlayingCard card, CardSource source) {
@@ -144,6 +146,49 @@ class SolitaireState {
     for (var stack in cardStacks) {
       if (!stack.canAddCard(card)) continue;
       return stack;
+    }
+
+    return null;
+  }
+
+  bool autoComplete() {
+    if (!isWon) return false;
+
+    while (!_complete) {
+      _autoMoveCards();
+    }
+
+    return true;
+  }
+
+  bool get _complete => deck.isEmpty && pile.isEmpty && cardStacks.every((stack) => stack.isEmpty);
+
+  _autoMoveCards() {
+    for (var stack in cardStacks) {
+      if (stack.isEmpty) continue;
+
+      final card = stack.top;
+      final destination = _findValidTarget(card);
+
+      if (destination == null) continue;
+
+      moveCardToDestination(card, stack, destination);
+    }
+
+    // TODO: Figure this out
+    if (! pile.isEmpty) {
+      final cards = pile.allCards;
+      pile.reset();
+    }
+
+    while (deck.isNotEmpty) {
+
+    }
+  }
+
+  TargetState? _findValidTarget(PlayingCard card) {
+    for (var target in targets) {
+      if (target.canAddCard(card)) return target;
     }
 
     return null;

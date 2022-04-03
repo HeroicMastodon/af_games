@@ -32,6 +32,8 @@ class CardStackState extends ValueNotifier<CardStack>
 
   bool get isEmpty => value.cards.isEmpty;
 
+  PlayingCard get top => value.cards.last;
+
   bool get areAllFaceUp => value.cards.every((card) => card.state.when(
         up: () => true,
         down: () => false,

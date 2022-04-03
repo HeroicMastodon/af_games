@@ -18,6 +18,8 @@ class TargetState extends ValueNotifier<Target> implements CardSource, CardDesti
   bool canAddCard(PlayingCard card) {
     throw Error();
   }
+
+  bool get isEmpty => value.cards.isEmpty;
   
   addCard(PlayingCard card) {
     final cardsCopy = value.cards.toList();
