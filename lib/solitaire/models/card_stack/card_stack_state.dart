@@ -1,4 +1,5 @@
 import 'package:af_games/solitaire/models/card_stack/card_stack.dart';
+import 'package:af_games/solitaire/models/playing_card/playing_card.dart';
 import 'package:flutter/cupertino.dart';
 
 class CardStackState extends ValueNotifier<CardStack> {
@@ -8,6 +9,20 @@ class CardStackState extends ValueNotifier<CardStack> {
   }
 
   empty() {
-    value = value.copyWith(cards: []);
+    _applyChanges([]);
+  }
+
+  bool canAddCard(PlayingCard card) {
+    throw Error();
+  }
+
+  addCard(PlayingCard card) {
+    final cardsCopy = value.cards.toList();
+    cardsCopy.add(card);
+    _applyChanges(cardsCopy);
+  }
+
+  _applyChanges(List<PlayingCard> cards) {
+    value = value.copyWith(cards: cards);
   }
 }

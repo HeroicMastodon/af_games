@@ -1,3 +1,5 @@
+import 'package:af_games/solitaire/models/card_destination/card_destination.dart';
+import 'package:af_games/solitaire/models/card_source/card_source.dart';
 import 'package:af_games/solitaire/models/card_stack/card_stack.dart';
 import 'package:af_games/solitaire/models/card_stack/card_stack_state.dart';
 import 'package:af_games/solitaire/models/deck/deck_state.dart';
@@ -33,12 +35,10 @@ class SolitaireState {
     }
   }
 
-  resumeGame(
-    Deck deck,
-    Pile pile,
-    List<CardStack> cardStacks,
-    List<Target> targets,
-  ) {
+  resumeGame(Deck deck,
+      Pile pile,
+      List<CardStack> cardStacks,
+      List<Target> targets,) {
     this.deck.value = deck;
     this.pile.value = pile;
     for (var stack in this.cardStacks) {
@@ -75,4 +75,18 @@ class SolitaireState {
   selectCard(PlayingCard card) => selectedCard.value = card;
 
   unSelectCard() => selectedCard.value = null;
+
+  moveCardToDestination(PlayingCard card, CardSource source, CardDestination destination) {
+    if (!_canMoveCardToDestination(
+        card, destination)) {
+      return;
+    }
+
+
+  }
+
+  // Private
+  bool _canMoveCardToDestination(PlayingCard card, CardDestination destination) {
+    return false;
+  }
 }
