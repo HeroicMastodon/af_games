@@ -9,4 +9,8 @@ class PileState extends ValueNotifier<Pile> {
     final pile = Pile([], []);
     return PileState(pile);
   }
+
+  reset() {
+    value = Pile([], []);
+  }
 }

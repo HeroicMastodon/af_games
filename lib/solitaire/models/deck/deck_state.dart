@@ -9,6 +9,11 @@ class DeckState extends ValueNotifier<Deck> {
   DeckState(Deck value) : super(value);
 
   factory DeckState.freshDeck() {
+    final deck = generateFreshDeck();
+    return DeckState(deck);
+  }
+
+  static Deck generateFreshDeck() {
     final cards = <PlayingCard>[];
     cards.addAll(_generateCardsForSuit(const Spades()));
     cards.addAll(_generateCardsForSuit(const Clubs()));
@@ -16,7 +21,11 @@ class DeckState extends ValueNotifier<Deck> {
     cards.addAll(_generateCardsForSuit(const Diamonds()));
     final deck = Deck(cards);
 
-    return DeckState(deck);
+    return deck;
+  }
+
+  reset() {
+    value = generateFreshDeck();
   }
 
   void shuffle([int iterations = 3]) {
