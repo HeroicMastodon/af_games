@@ -39,7 +39,9 @@ class DeckState extends ValueNotifier<Deck> {
     value = value.copyWith(cards: newCards);
   }
 
-  PlayingCard get top {
+  PlayingCard? get top {
+    if (value.cards.isEmpty) return null;
+
     return value.cards.last;
   }
 
@@ -47,6 +49,12 @@ class DeckState extends ValueNotifier<Deck> {
     value = value.copyWith(
       cards: value.cards.sublist(0, value.cards.length - 1),
     );
+  }
+
+  addCard(PlayingCard card) {
+    final cardsCopy = value.cards.toList();
+    cardsCopy.add(card.copyWith(state: const FaceDown()));
+    value = value.copyWith(cards: cardsCopy);
   }
 
   static List<PlayingCard> _generateCardsForSuit(CardSuit suit) {

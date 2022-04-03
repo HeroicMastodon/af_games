@@ -3,11 +3,11 @@ import 'package:flutter/cupertino.dart';
 
 class CardStackState extends ValueNotifier<CardStack> {
   CardStackState(CardStack value) : super(value);
-  factory CardStackState.initial() {
-    return CardStackState(CardStack([]));
+  factory CardStackState.initial(int order) {
+    return CardStackState(CardStack([], order));
   }
 
   empty() {
-    value = CardStack([]);
+    value = value.copyWith(cards: []);
   }
 }

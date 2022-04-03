@@ -21,9 +21,10 @@ Target _$TargetFromJson(Map<String, dynamic> json) {
 class _$TargetTearOff {
   const _$TargetTearOff();
 
-  _Target call(List<PlayingCard> cards) {
+  _Target call(List<PlayingCard> cards, int order) {
     return _Target(
       cards,
+      order,
     );
   }
 
@@ -38,6 +39,7 @@ const $Target = _$TargetTearOff();
 /// @nodoc
 mixin _$Target {
   List<PlayingCard> get cards => throw _privateConstructorUsedError;
+  int get order => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -48,7 +50,7 @@ mixin _$Target {
 abstract class $TargetCopyWith<$Res> {
   factory $TargetCopyWith(Target value, $Res Function(Target) then) =
       _$TargetCopyWithImpl<$Res>;
-  $Res call({List<PlayingCard> cards});
+  $Res call({List<PlayingCard> cards, int order});
 }
 
 /// @nodoc
@@ -62,12 +64,17 @@ class _$TargetCopyWithImpl<$Res> implements $TargetCopyWith<$Res> {
   @override
   $Res call({
     Object? cards = freezed,
+    Object? order = freezed,
   }) {
     return _then(_value.copyWith(
       cards: cards == freezed
           ? _value.cards
           : cards // ignore: cast_nullable_to_non_nullable
               as List<PlayingCard>,
+      order: order == freezed
+          ? _value.order
+          : order // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -77,7 +84,7 @@ abstract class _$TargetCopyWith<$Res> implements $TargetCopyWith<$Res> {
   factory _$TargetCopyWith(_Target value, $Res Function(_Target) then) =
       __$TargetCopyWithImpl<$Res>;
   @override
-  $Res call({List<PlayingCard> cards});
+  $Res call({List<PlayingCard> cards, int order});
 }
 
 /// @nodoc
@@ -92,12 +99,17 @@ class __$TargetCopyWithImpl<$Res> extends _$TargetCopyWithImpl<$Res>
   @override
   $Res call({
     Object? cards = freezed,
+    Object? order = freezed,
   }) {
     return _then(_Target(
       cards == freezed
           ? _value.cards
           : cards // ignore: cast_nullable_to_non_nullable
               as List<PlayingCard>,
+      order == freezed
+          ? _value.order
+          : order // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -105,17 +117,19 @@ class __$TargetCopyWithImpl<$Res> extends _$TargetCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_Target implements _Target {
-  _$_Target(this.cards);
+  _$_Target(this.cards, this.order);
 
   factory _$_Target.fromJson(Map<String, dynamic> json) =>
       _$$_TargetFromJson(json);
 
   @override
   final List<PlayingCard> cards;
+  @override
+  final int order;
 
   @override
   String toString() {
-    return 'Target(cards: $cards)';
+    return 'Target(cards: $cards, order: $order)';
   }
 
   @override
@@ -123,12 +137,15 @@ class _$_Target implements _Target {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Target &&
-            const DeepCollectionEquality().equals(other.cards, cards));
+            const DeepCollectionEquality().equals(other.cards, cards) &&
+            const DeepCollectionEquality().equals(other.order, order));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(cards));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(cards),
+      const DeepCollectionEquality().hash(order));
 
   @JsonKey(ignore: true)
   @override
@@ -142,12 +159,14 @@ class _$_Target implements _Target {
 }
 
 abstract class _Target implements Target {
-  factory _Target(List<PlayingCard> cards) = _$_Target;
+  factory _Target(List<PlayingCard> cards, int order) = _$_Target;
 
   factory _Target.fromJson(Map<String, dynamic> json) = _$_Target.fromJson;
 
   @override
   List<PlayingCard> get cards;
+  @override
+  int get order;
   @override
   @JsonKey(ignore: true)
   _$TargetCopyWith<_Target> get copyWith => throw _privateConstructorUsedError;
