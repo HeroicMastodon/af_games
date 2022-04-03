@@ -6,6 +6,7 @@ import 'package:af_games/solitaire/models/pile/pile_state.dart';
 import 'package:af_games/solitaire/models/playing_card/playing_card.dart';
 import 'package:af_games/solitaire/models/target/target.dart';
 import 'package:af_games/solitaire/models/target/target_state.dart';
+import 'package:flutter/cupertino.dart';
 
 import 'models/deck/deck.dart';
 
@@ -18,6 +19,7 @@ class SolitaireState {
   List<TargetState> targets = [
     for (var i = 0; i < 4; i++) TargetState.initial(i)
   ];
+  ValueNotifier<PlayingCard?> selectedCard = ValueNotifier(null);
 
   startNewGame() {
     deck.reset();
@@ -69,4 +71,8 @@ class SolitaireState {
 
     return true;
   }
+
+  selectCard(PlayingCard card) => selectedCard.value = card;
+
+  unSelectCard() => selectedCard.value = null;
 }
