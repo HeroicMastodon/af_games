@@ -80,4 +80,30 @@ class PileState extends ValueNotifier<Pile> implements CardSource {
     // TODO: implement removeCard
     throw UnimplementedError();
   }
+
+  @override
+  bool containsCard(PlayingCard card) {
+    return value.visible.contains(card) || value.hidden.contains(card);
+  }
+
+  @override
+  bool selectCard(PlayingCard card) {
+    return _updateTopCardState(card, const Selected());
+  }
+
+  @override
+  bool unselectCard(PlayingCard card) {
+    return _updateTopCardState(card, const FaceUp());
+  }
+
+  bool _updateTopCardState(PlayingCard card, CardState state) {
+    if (card != value.visible.last) return false;
+
+    var cards = [...value.visible];
+    cards.removeLast();
+    cards.add(card.copyWith(state: state));
+    value = value.copyWith(visible: cards);
+
+    return true;
+  }
 }

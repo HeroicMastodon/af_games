@@ -21,8 +21,8 @@ class _$SolitaireActionTearOff {
     return const _SolitaireActionDraw();
   }
 
-  _SolitaireActionsNewGame newGame() {
-    return const _SolitaireActionsNewGame();
+  SolitaireActionsNewGame newGame() {
+    return const SolitaireActionsNewGame();
   }
 
   _SolitaireActionAutoMove autoMove(PlayingCard card, CardSource source) {
@@ -48,12 +48,12 @@ class _$SolitaireActionTearOff {
     );
   }
 
-  _SolitaireActionAutoComplete autoComplete() {
-    return const _SolitaireActionAutoComplete();
+  SolitaireActionAutoComplete autoComplete() {
+    return const SolitaireActionAutoComplete();
   }
 
-  _SolitaireActionUndo undo() {
-    return const _SolitaireActionUndo();
+  SolitaireActionUndo undo() {
+    return const SolitaireActionUndo();
   }
 }
 
@@ -105,34 +105,34 @@ mixin _$SolitaireAction {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SolitaireActionDraw value) draw,
-    required TResult Function(_SolitaireActionsNewGame value) newGame,
+    required TResult Function(SolitaireActionsNewGame value) newGame,
     required TResult Function(_SolitaireActionAutoMove value) autoMove,
     required TResult Function(_SolitaireActionSelectCard value) selectCard,
     required TResult Function(_SolitaireActionMoveCard value) moveCard,
-    required TResult Function(_SolitaireActionAutoComplete value) autoComplete,
-    required TResult Function(_SolitaireActionUndo value) undo,
+    required TResult Function(SolitaireActionAutoComplete value) autoComplete,
+    required TResult Function(SolitaireActionUndo value) undo,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_SolitaireActionDraw value)? draw,
-    TResult Function(_SolitaireActionsNewGame value)? newGame,
+    TResult Function(SolitaireActionsNewGame value)? newGame,
     TResult Function(_SolitaireActionAutoMove value)? autoMove,
     TResult Function(_SolitaireActionSelectCard value)? selectCard,
     TResult Function(_SolitaireActionMoveCard value)? moveCard,
-    TResult Function(_SolitaireActionAutoComplete value)? autoComplete,
-    TResult Function(_SolitaireActionUndo value)? undo,
+    TResult Function(SolitaireActionAutoComplete value)? autoComplete,
+    TResult Function(SolitaireActionUndo value)? undo,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SolitaireActionDraw value)? draw,
-    TResult Function(_SolitaireActionsNewGame value)? newGame,
+    TResult Function(SolitaireActionsNewGame value)? newGame,
     TResult Function(_SolitaireActionAutoMove value)? autoMove,
     TResult Function(_SolitaireActionSelectCard value)? selectCard,
     TResult Function(_SolitaireActionMoveCard value)? moveCard,
-    TResult Function(_SolitaireActionAutoComplete value)? autoComplete,
-    TResult Function(_SolitaireActionUndo value)? undo,
+    TResult Function(SolitaireActionAutoComplete value)? autoComplete,
+    TResult Function(SolitaireActionUndo value)? undo,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -249,12 +249,12 @@ class _$_SolitaireActionDraw implements _SolitaireActionDraw {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SolitaireActionDraw value) draw,
-    required TResult Function(_SolitaireActionsNewGame value) newGame,
+    required TResult Function(SolitaireActionsNewGame value) newGame,
     required TResult Function(_SolitaireActionAutoMove value) autoMove,
     required TResult Function(_SolitaireActionSelectCard value) selectCard,
     required TResult Function(_SolitaireActionMoveCard value) moveCard,
-    required TResult Function(_SolitaireActionAutoComplete value) autoComplete,
-    required TResult Function(_SolitaireActionUndo value) undo,
+    required TResult Function(SolitaireActionAutoComplete value) autoComplete,
+    required TResult Function(SolitaireActionUndo value) undo,
   }) {
     return draw(this);
   }
@@ -263,12 +263,12 @@ class _$_SolitaireActionDraw implements _SolitaireActionDraw {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_SolitaireActionDraw value)? draw,
-    TResult Function(_SolitaireActionsNewGame value)? newGame,
+    TResult Function(SolitaireActionsNewGame value)? newGame,
     TResult Function(_SolitaireActionAutoMove value)? autoMove,
     TResult Function(_SolitaireActionSelectCard value)? selectCard,
     TResult Function(_SolitaireActionMoveCard value)? moveCard,
-    TResult Function(_SolitaireActionAutoComplete value)? autoComplete,
-    TResult Function(_SolitaireActionUndo value)? undo,
+    TResult Function(SolitaireActionAutoComplete value)? autoComplete,
+    TResult Function(SolitaireActionUndo value)? undo,
   }) {
     return draw?.call(this);
   }
@@ -277,12 +277,12 @@ class _$_SolitaireActionDraw implements _SolitaireActionDraw {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SolitaireActionDraw value)? draw,
-    TResult Function(_SolitaireActionsNewGame value)? newGame,
+    TResult Function(SolitaireActionsNewGame value)? newGame,
     TResult Function(_SolitaireActionAutoMove value)? autoMove,
     TResult Function(_SolitaireActionSelectCard value)? selectCard,
     TResult Function(_SolitaireActionMoveCard value)? moveCard,
-    TResult Function(_SolitaireActionAutoComplete value)? autoComplete,
-    TResult Function(_SolitaireActionUndo value)? undo,
+    TResult Function(SolitaireActionAutoComplete value)? autoComplete,
+    TResult Function(SolitaireActionUndo value)? undo,
     required TResult orElse(),
   }) {
     if (draw != null) {
@@ -297,29 +297,28 @@ abstract class _SolitaireActionDraw implements SolitaireAction {
 }
 
 /// @nodoc
-abstract class _$SolitaireActionsNewGameCopyWith<$Res> {
-  factory _$SolitaireActionsNewGameCopyWith(_SolitaireActionsNewGame value,
-          $Res Function(_SolitaireActionsNewGame) then) =
-      __$SolitaireActionsNewGameCopyWithImpl<$Res>;
+abstract class $SolitaireActionsNewGameCopyWith<$Res> {
+  factory $SolitaireActionsNewGameCopyWith(SolitaireActionsNewGame value,
+          $Res Function(SolitaireActionsNewGame) then) =
+      _$SolitaireActionsNewGameCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SolitaireActionsNewGameCopyWithImpl<$Res>
+class _$SolitaireActionsNewGameCopyWithImpl<$Res>
     extends _$SolitaireActionCopyWithImpl<$Res>
-    implements _$SolitaireActionsNewGameCopyWith<$Res> {
-  __$SolitaireActionsNewGameCopyWithImpl(_SolitaireActionsNewGame _value,
-      $Res Function(_SolitaireActionsNewGame) _then)
-      : super(_value, (v) => _then(v as _SolitaireActionsNewGame));
+    implements $SolitaireActionsNewGameCopyWith<$Res> {
+  _$SolitaireActionsNewGameCopyWithImpl(SolitaireActionsNewGame _value,
+      $Res Function(SolitaireActionsNewGame) _then)
+      : super(_value, (v) => _then(v as SolitaireActionsNewGame));
 
   @override
-  _SolitaireActionsNewGame get _value =>
-      super._value as _SolitaireActionsNewGame;
+  SolitaireActionsNewGame get _value => super._value as SolitaireActionsNewGame;
 }
 
 /// @nodoc
 
-class _$_SolitaireActionsNewGame implements _SolitaireActionsNewGame {
-  const _$_SolitaireActionsNewGame();
+class _$SolitaireActionsNewGame implements SolitaireActionsNewGame {
+  const _$SolitaireActionsNewGame();
 
   @override
   String toString() {
@@ -329,7 +328,7 @@ class _$_SolitaireActionsNewGame implements _SolitaireActionsNewGame {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _SolitaireActionsNewGame);
+        (other.runtimeType == runtimeType && other is SolitaireActionsNewGame);
   }
 
   @override
@@ -391,12 +390,12 @@ class _$_SolitaireActionsNewGame implements _SolitaireActionsNewGame {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SolitaireActionDraw value) draw,
-    required TResult Function(_SolitaireActionsNewGame value) newGame,
+    required TResult Function(SolitaireActionsNewGame value) newGame,
     required TResult Function(_SolitaireActionAutoMove value) autoMove,
     required TResult Function(_SolitaireActionSelectCard value) selectCard,
     required TResult Function(_SolitaireActionMoveCard value) moveCard,
-    required TResult Function(_SolitaireActionAutoComplete value) autoComplete,
-    required TResult Function(_SolitaireActionUndo value) undo,
+    required TResult Function(SolitaireActionAutoComplete value) autoComplete,
+    required TResult Function(SolitaireActionUndo value) undo,
   }) {
     return newGame(this);
   }
@@ -405,12 +404,12 @@ class _$_SolitaireActionsNewGame implements _SolitaireActionsNewGame {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_SolitaireActionDraw value)? draw,
-    TResult Function(_SolitaireActionsNewGame value)? newGame,
+    TResult Function(SolitaireActionsNewGame value)? newGame,
     TResult Function(_SolitaireActionAutoMove value)? autoMove,
     TResult Function(_SolitaireActionSelectCard value)? selectCard,
     TResult Function(_SolitaireActionMoveCard value)? moveCard,
-    TResult Function(_SolitaireActionAutoComplete value)? autoComplete,
-    TResult Function(_SolitaireActionUndo value)? undo,
+    TResult Function(SolitaireActionAutoComplete value)? autoComplete,
+    TResult Function(SolitaireActionUndo value)? undo,
   }) {
     return newGame?.call(this);
   }
@@ -419,12 +418,12 @@ class _$_SolitaireActionsNewGame implements _SolitaireActionsNewGame {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SolitaireActionDraw value)? draw,
-    TResult Function(_SolitaireActionsNewGame value)? newGame,
+    TResult Function(SolitaireActionsNewGame value)? newGame,
     TResult Function(_SolitaireActionAutoMove value)? autoMove,
     TResult Function(_SolitaireActionSelectCard value)? selectCard,
     TResult Function(_SolitaireActionMoveCard value)? moveCard,
-    TResult Function(_SolitaireActionAutoComplete value)? autoComplete,
-    TResult Function(_SolitaireActionUndo value)? undo,
+    TResult Function(SolitaireActionAutoComplete value)? autoComplete,
+    TResult Function(SolitaireActionUndo value)? undo,
     required TResult orElse(),
   }) {
     if (newGame != null) {
@@ -434,8 +433,8 @@ class _$_SolitaireActionsNewGame implements _SolitaireActionsNewGame {
   }
 }
 
-abstract class _SolitaireActionsNewGame implements SolitaireAction {
-  const factory _SolitaireActionsNewGame() = _$_SolitaireActionsNewGame;
+abstract class SolitaireActionsNewGame implements SolitaireAction {
+  const factory SolitaireActionsNewGame() = _$SolitaireActionsNewGame;
 }
 
 /// @nodoc
@@ -577,12 +576,12 @@ class _$_SolitaireActionAutoMove implements _SolitaireActionAutoMove {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SolitaireActionDraw value) draw,
-    required TResult Function(_SolitaireActionsNewGame value) newGame,
+    required TResult Function(SolitaireActionsNewGame value) newGame,
     required TResult Function(_SolitaireActionAutoMove value) autoMove,
     required TResult Function(_SolitaireActionSelectCard value) selectCard,
     required TResult Function(_SolitaireActionMoveCard value) moveCard,
-    required TResult Function(_SolitaireActionAutoComplete value) autoComplete,
-    required TResult Function(_SolitaireActionUndo value) undo,
+    required TResult Function(SolitaireActionAutoComplete value) autoComplete,
+    required TResult Function(SolitaireActionUndo value) undo,
   }) {
     return autoMove(this);
   }
@@ -591,12 +590,12 @@ class _$_SolitaireActionAutoMove implements _SolitaireActionAutoMove {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_SolitaireActionDraw value)? draw,
-    TResult Function(_SolitaireActionsNewGame value)? newGame,
+    TResult Function(SolitaireActionsNewGame value)? newGame,
     TResult Function(_SolitaireActionAutoMove value)? autoMove,
     TResult Function(_SolitaireActionSelectCard value)? selectCard,
     TResult Function(_SolitaireActionMoveCard value)? moveCard,
-    TResult Function(_SolitaireActionAutoComplete value)? autoComplete,
-    TResult Function(_SolitaireActionUndo value)? undo,
+    TResult Function(SolitaireActionAutoComplete value)? autoComplete,
+    TResult Function(SolitaireActionUndo value)? undo,
   }) {
     return autoMove?.call(this);
   }
@@ -605,12 +604,12 @@ class _$_SolitaireActionAutoMove implements _SolitaireActionAutoMove {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SolitaireActionDraw value)? draw,
-    TResult Function(_SolitaireActionsNewGame value)? newGame,
+    TResult Function(SolitaireActionsNewGame value)? newGame,
     TResult Function(_SolitaireActionAutoMove value)? autoMove,
     TResult Function(_SolitaireActionSelectCard value)? selectCard,
     TResult Function(_SolitaireActionMoveCard value)? moveCard,
-    TResult Function(_SolitaireActionAutoComplete value)? autoComplete,
-    TResult Function(_SolitaireActionUndo value)? undo,
+    TResult Function(SolitaireActionAutoComplete value)? autoComplete,
+    TResult Function(SolitaireActionUndo value)? undo,
     required TResult orElse(),
   }) {
     if (autoMove != null) {
@@ -771,12 +770,12 @@ class _$_SolitaireActionSelectCard implements _SolitaireActionSelectCard {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SolitaireActionDraw value) draw,
-    required TResult Function(_SolitaireActionsNewGame value) newGame,
+    required TResult Function(SolitaireActionsNewGame value) newGame,
     required TResult Function(_SolitaireActionAutoMove value) autoMove,
     required TResult Function(_SolitaireActionSelectCard value) selectCard,
     required TResult Function(_SolitaireActionMoveCard value) moveCard,
-    required TResult Function(_SolitaireActionAutoComplete value) autoComplete,
-    required TResult Function(_SolitaireActionUndo value) undo,
+    required TResult Function(SolitaireActionAutoComplete value) autoComplete,
+    required TResult Function(SolitaireActionUndo value) undo,
   }) {
     return selectCard(this);
   }
@@ -785,12 +784,12 @@ class _$_SolitaireActionSelectCard implements _SolitaireActionSelectCard {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_SolitaireActionDraw value)? draw,
-    TResult Function(_SolitaireActionsNewGame value)? newGame,
+    TResult Function(SolitaireActionsNewGame value)? newGame,
     TResult Function(_SolitaireActionAutoMove value)? autoMove,
     TResult Function(_SolitaireActionSelectCard value)? selectCard,
     TResult Function(_SolitaireActionMoveCard value)? moveCard,
-    TResult Function(_SolitaireActionAutoComplete value)? autoComplete,
-    TResult Function(_SolitaireActionUndo value)? undo,
+    TResult Function(SolitaireActionAutoComplete value)? autoComplete,
+    TResult Function(SolitaireActionUndo value)? undo,
   }) {
     return selectCard?.call(this);
   }
@@ -799,12 +798,12 @@ class _$_SolitaireActionSelectCard implements _SolitaireActionSelectCard {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SolitaireActionDraw value)? draw,
-    TResult Function(_SolitaireActionsNewGame value)? newGame,
+    TResult Function(SolitaireActionsNewGame value)? newGame,
     TResult Function(_SolitaireActionAutoMove value)? autoMove,
     TResult Function(_SolitaireActionSelectCard value)? selectCard,
     TResult Function(_SolitaireActionMoveCard value)? moveCard,
-    TResult Function(_SolitaireActionAutoComplete value)? autoComplete,
-    TResult Function(_SolitaireActionUndo value)? undo,
+    TResult Function(SolitaireActionAutoComplete value)? autoComplete,
+    TResult Function(SolitaireActionUndo value)? undo,
     required TResult orElse(),
   }) {
     if (selectCard != null) {
@@ -974,12 +973,12 @@ class _$_SolitaireActionMoveCard implements _SolitaireActionMoveCard {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SolitaireActionDraw value) draw,
-    required TResult Function(_SolitaireActionsNewGame value) newGame,
+    required TResult Function(SolitaireActionsNewGame value) newGame,
     required TResult Function(_SolitaireActionAutoMove value) autoMove,
     required TResult Function(_SolitaireActionSelectCard value) selectCard,
     required TResult Function(_SolitaireActionMoveCard value) moveCard,
-    required TResult Function(_SolitaireActionAutoComplete value) autoComplete,
-    required TResult Function(_SolitaireActionUndo value) undo,
+    required TResult Function(SolitaireActionAutoComplete value) autoComplete,
+    required TResult Function(SolitaireActionUndo value) undo,
   }) {
     return moveCard(this);
   }
@@ -988,12 +987,12 @@ class _$_SolitaireActionMoveCard implements _SolitaireActionMoveCard {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_SolitaireActionDraw value)? draw,
-    TResult Function(_SolitaireActionsNewGame value)? newGame,
+    TResult Function(SolitaireActionsNewGame value)? newGame,
     TResult Function(_SolitaireActionAutoMove value)? autoMove,
     TResult Function(_SolitaireActionSelectCard value)? selectCard,
     TResult Function(_SolitaireActionMoveCard value)? moveCard,
-    TResult Function(_SolitaireActionAutoComplete value)? autoComplete,
-    TResult Function(_SolitaireActionUndo value)? undo,
+    TResult Function(SolitaireActionAutoComplete value)? autoComplete,
+    TResult Function(SolitaireActionUndo value)? undo,
   }) {
     return moveCard?.call(this);
   }
@@ -1002,12 +1001,12 @@ class _$_SolitaireActionMoveCard implements _SolitaireActionMoveCard {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SolitaireActionDraw value)? draw,
-    TResult Function(_SolitaireActionsNewGame value)? newGame,
+    TResult Function(SolitaireActionsNewGame value)? newGame,
     TResult Function(_SolitaireActionAutoMove value)? autoMove,
     TResult Function(_SolitaireActionSelectCard value)? selectCard,
     TResult Function(_SolitaireActionMoveCard value)? moveCard,
-    TResult Function(_SolitaireActionAutoComplete value)? autoComplete,
-    TResult Function(_SolitaireActionUndo value)? undo,
+    TResult Function(SolitaireActionAutoComplete value)? autoComplete,
+    TResult Function(SolitaireActionUndo value)? undo,
     required TResult orElse(),
   }) {
     if (moveCard != null) {
@@ -1031,31 +1030,30 @@ abstract class _SolitaireActionMoveCard implements SolitaireAction {
 }
 
 /// @nodoc
-abstract class _$SolitaireActionAutoCompleteCopyWith<$Res> {
-  factory _$SolitaireActionAutoCompleteCopyWith(
-          _SolitaireActionAutoComplete value,
-          $Res Function(_SolitaireActionAutoComplete) then) =
-      __$SolitaireActionAutoCompleteCopyWithImpl<$Res>;
+abstract class $SolitaireActionAutoCompleteCopyWith<$Res> {
+  factory $SolitaireActionAutoCompleteCopyWith(
+          SolitaireActionAutoComplete value,
+          $Res Function(SolitaireActionAutoComplete) then) =
+      _$SolitaireActionAutoCompleteCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SolitaireActionAutoCompleteCopyWithImpl<$Res>
+class _$SolitaireActionAutoCompleteCopyWithImpl<$Res>
     extends _$SolitaireActionCopyWithImpl<$Res>
-    implements _$SolitaireActionAutoCompleteCopyWith<$Res> {
-  __$SolitaireActionAutoCompleteCopyWithImpl(
-      _SolitaireActionAutoComplete _value,
-      $Res Function(_SolitaireActionAutoComplete) _then)
-      : super(_value, (v) => _then(v as _SolitaireActionAutoComplete));
+    implements $SolitaireActionAutoCompleteCopyWith<$Res> {
+  _$SolitaireActionAutoCompleteCopyWithImpl(SolitaireActionAutoComplete _value,
+      $Res Function(SolitaireActionAutoComplete) _then)
+      : super(_value, (v) => _then(v as SolitaireActionAutoComplete));
 
   @override
-  _SolitaireActionAutoComplete get _value =>
-      super._value as _SolitaireActionAutoComplete;
+  SolitaireActionAutoComplete get _value =>
+      super._value as SolitaireActionAutoComplete;
 }
 
 /// @nodoc
 
-class _$_SolitaireActionAutoComplete implements _SolitaireActionAutoComplete {
-  const _$_SolitaireActionAutoComplete();
+class _$SolitaireActionAutoComplete implements SolitaireActionAutoComplete {
+  const _$SolitaireActionAutoComplete();
 
   @override
   String toString() {
@@ -1066,7 +1064,7 @@ class _$_SolitaireActionAutoComplete implements _SolitaireActionAutoComplete {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SolitaireActionAutoComplete);
+            other is SolitaireActionAutoComplete);
   }
 
   @override
@@ -1128,12 +1126,12 @@ class _$_SolitaireActionAutoComplete implements _SolitaireActionAutoComplete {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SolitaireActionDraw value) draw,
-    required TResult Function(_SolitaireActionsNewGame value) newGame,
+    required TResult Function(SolitaireActionsNewGame value) newGame,
     required TResult Function(_SolitaireActionAutoMove value) autoMove,
     required TResult Function(_SolitaireActionSelectCard value) selectCard,
     required TResult Function(_SolitaireActionMoveCard value) moveCard,
-    required TResult Function(_SolitaireActionAutoComplete value) autoComplete,
-    required TResult Function(_SolitaireActionUndo value) undo,
+    required TResult Function(SolitaireActionAutoComplete value) autoComplete,
+    required TResult Function(SolitaireActionUndo value) undo,
   }) {
     return autoComplete(this);
   }
@@ -1142,12 +1140,12 @@ class _$_SolitaireActionAutoComplete implements _SolitaireActionAutoComplete {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_SolitaireActionDraw value)? draw,
-    TResult Function(_SolitaireActionsNewGame value)? newGame,
+    TResult Function(SolitaireActionsNewGame value)? newGame,
     TResult Function(_SolitaireActionAutoMove value)? autoMove,
     TResult Function(_SolitaireActionSelectCard value)? selectCard,
     TResult Function(_SolitaireActionMoveCard value)? moveCard,
-    TResult Function(_SolitaireActionAutoComplete value)? autoComplete,
-    TResult Function(_SolitaireActionUndo value)? undo,
+    TResult Function(SolitaireActionAutoComplete value)? autoComplete,
+    TResult Function(SolitaireActionUndo value)? undo,
   }) {
     return autoComplete?.call(this);
   }
@@ -1156,12 +1154,12 @@ class _$_SolitaireActionAutoComplete implements _SolitaireActionAutoComplete {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SolitaireActionDraw value)? draw,
-    TResult Function(_SolitaireActionsNewGame value)? newGame,
+    TResult Function(SolitaireActionsNewGame value)? newGame,
     TResult Function(_SolitaireActionAutoMove value)? autoMove,
     TResult Function(_SolitaireActionSelectCard value)? selectCard,
     TResult Function(_SolitaireActionMoveCard value)? moveCard,
-    TResult Function(_SolitaireActionAutoComplete value)? autoComplete,
-    TResult Function(_SolitaireActionUndo value)? undo,
+    TResult Function(SolitaireActionAutoComplete value)? autoComplete,
+    TResult Function(SolitaireActionUndo value)? undo,
     required TResult orElse(),
   }) {
     if (autoComplete != null) {
@@ -1171,33 +1169,33 @@ class _$_SolitaireActionAutoComplete implements _SolitaireActionAutoComplete {
   }
 }
 
-abstract class _SolitaireActionAutoComplete implements SolitaireAction {
-  const factory _SolitaireActionAutoComplete() = _$_SolitaireActionAutoComplete;
+abstract class SolitaireActionAutoComplete implements SolitaireAction {
+  const factory SolitaireActionAutoComplete() = _$SolitaireActionAutoComplete;
 }
 
 /// @nodoc
-abstract class _$SolitaireActionUndoCopyWith<$Res> {
-  factory _$SolitaireActionUndoCopyWith(_SolitaireActionUndo value,
-          $Res Function(_SolitaireActionUndo) then) =
-      __$SolitaireActionUndoCopyWithImpl<$Res>;
+abstract class $SolitaireActionUndoCopyWith<$Res> {
+  factory $SolitaireActionUndoCopyWith(
+          SolitaireActionUndo value, $Res Function(SolitaireActionUndo) then) =
+      _$SolitaireActionUndoCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SolitaireActionUndoCopyWithImpl<$Res>
+class _$SolitaireActionUndoCopyWithImpl<$Res>
     extends _$SolitaireActionCopyWithImpl<$Res>
-    implements _$SolitaireActionUndoCopyWith<$Res> {
-  __$SolitaireActionUndoCopyWithImpl(
-      _SolitaireActionUndo _value, $Res Function(_SolitaireActionUndo) _then)
-      : super(_value, (v) => _then(v as _SolitaireActionUndo));
+    implements $SolitaireActionUndoCopyWith<$Res> {
+  _$SolitaireActionUndoCopyWithImpl(
+      SolitaireActionUndo _value, $Res Function(SolitaireActionUndo) _then)
+      : super(_value, (v) => _then(v as SolitaireActionUndo));
 
   @override
-  _SolitaireActionUndo get _value => super._value as _SolitaireActionUndo;
+  SolitaireActionUndo get _value => super._value as SolitaireActionUndo;
 }
 
 /// @nodoc
 
-class _$_SolitaireActionUndo implements _SolitaireActionUndo {
-  const _$_SolitaireActionUndo();
+class _$SolitaireActionUndo implements SolitaireActionUndo {
+  const _$SolitaireActionUndo();
 
   @override
   String toString() {
@@ -1207,7 +1205,7 @@ class _$_SolitaireActionUndo implements _SolitaireActionUndo {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _SolitaireActionUndo);
+        (other.runtimeType == runtimeType && other is SolitaireActionUndo);
   }
 
   @override
@@ -1269,12 +1267,12 @@ class _$_SolitaireActionUndo implements _SolitaireActionUndo {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SolitaireActionDraw value) draw,
-    required TResult Function(_SolitaireActionsNewGame value) newGame,
+    required TResult Function(SolitaireActionsNewGame value) newGame,
     required TResult Function(_SolitaireActionAutoMove value) autoMove,
     required TResult Function(_SolitaireActionSelectCard value) selectCard,
     required TResult Function(_SolitaireActionMoveCard value) moveCard,
-    required TResult Function(_SolitaireActionAutoComplete value) autoComplete,
-    required TResult Function(_SolitaireActionUndo value) undo,
+    required TResult Function(SolitaireActionAutoComplete value) autoComplete,
+    required TResult Function(SolitaireActionUndo value) undo,
   }) {
     return undo(this);
   }
@@ -1283,12 +1281,12 @@ class _$_SolitaireActionUndo implements _SolitaireActionUndo {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_SolitaireActionDraw value)? draw,
-    TResult Function(_SolitaireActionsNewGame value)? newGame,
+    TResult Function(SolitaireActionsNewGame value)? newGame,
     TResult Function(_SolitaireActionAutoMove value)? autoMove,
     TResult Function(_SolitaireActionSelectCard value)? selectCard,
     TResult Function(_SolitaireActionMoveCard value)? moveCard,
-    TResult Function(_SolitaireActionAutoComplete value)? autoComplete,
-    TResult Function(_SolitaireActionUndo value)? undo,
+    TResult Function(SolitaireActionAutoComplete value)? autoComplete,
+    TResult Function(SolitaireActionUndo value)? undo,
   }) {
     return undo?.call(this);
   }
@@ -1297,12 +1295,12 @@ class _$_SolitaireActionUndo implements _SolitaireActionUndo {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SolitaireActionDraw value)? draw,
-    TResult Function(_SolitaireActionsNewGame value)? newGame,
+    TResult Function(SolitaireActionsNewGame value)? newGame,
     TResult Function(_SolitaireActionAutoMove value)? autoMove,
     TResult Function(_SolitaireActionSelectCard value)? selectCard,
     TResult Function(_SolitaireActionMoveCard value)? moveCard,
-    TResult Function(_SolitaireActionAutoComplete value)? autoComplete,
-    TResult Function(_SolitaireActionUndo value)? undo,
+    TResult Function(SolitaireActionAutoComplete value)? autoComplete,
+    TResult Function(SolitaireActionUndo value)? undo,
     required TResult orElse(),
   }) {
     if (undo != null) {
@@ -1312,8 +1310,8 @@ class _$_SolitaireActionUndo implements _SolitaireActionUndo {
   }
 }
 
-abstract class _SolitaireActionUndo implements SolitaireAction {
-  const factory _SolitaireActionUndo() = _$_SolitaireActionUndo;
+abstract class SolitaireActionUndo implements SolitaireAction {
+  const factory SolitaireActionUndo() = _$SolitaireActionUndo;
 }
 
 /// @nodoc

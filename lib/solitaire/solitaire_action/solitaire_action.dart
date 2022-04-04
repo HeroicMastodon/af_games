@@ -9,7 +9,7 @@ part 'solitaire_action.freezed.dart';
 class SolitaireAction with _$SolitaireAction {
   const factory SolitaireAction.draw() = _SolitaireActionDraw;
 
-  const factory SolitaireAction.newGame() = _SolitaireActionsNewGame;
+  const factory SolitaireAction.newGame() = SolitaireActionsNewGame;
 
   const factory SolitaireAction.autoMove(PlayingCard card, CardSource source) =
       _SolitaireActionAutoMove;
@@ -21,9 +21,9 @@ class SolitaireAction with _$SolitaireAction {
           PlayingCard card, CardSource source, CardDestination destination) =
       _SolitaireActionMoveCard;
 
-  const factory SolitaireAction.autoComplete() = _SolitaireActionAutoComplete;
+  const factory SolitaireAction.autoComplete() = SolitaireActionAutoComplete;
 
-  const factory SolitaireAction.undo() = _SolitaireActionUndo;
+  const factory SolitaireAction.undo() = SolitaireActionUndo;
 }
 
 @freezed

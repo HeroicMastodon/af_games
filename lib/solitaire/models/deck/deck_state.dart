@@ -32,6 +32,8 @@ class DeckState extends ValueNotifier<Deck> {
     value = value.copyWith(cards: cards);
   }
 
+  int get count => value.cards.length;
+
   bool get isEmpty => value.cards.isEmpty;
   bool get isNotEmpty => value.cards.isNotEmpty;
 

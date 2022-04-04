@@ -42,4 +42,26 @@ class TargetState extends ValueNotifier<Target> implements CardSource, CardDesti
     // TODO: implement addCards
     throw UnimplementedError();
   }
+
+  @override
+  bool containsCard(PlayingCard card) {
+    return value.cards.contains(card);
+  }
+
+  @override
+  bool selectCard(PlayingCard card) => _updateCardState(card, const Selected());
+
+  @override
+  bool unselectCard(PlayingCard card) => _updateCardState(card, const FaceUp());
+
+  bool _updateCardState(PlayingCard card, CardState state) {
+    var cards = [...value.cards];
+    var index = cards.indexOf(card);
+
+    if (index == -1) return false;
+
+    cards[index] = card.copyWith(state: state);
+    value = value.copyWith(cards: cards);
+    return true;
+  }
 }
