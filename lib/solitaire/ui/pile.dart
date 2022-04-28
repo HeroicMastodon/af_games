@@ -7,7 +7,7 @@ class PileWidget extends HookWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    throw UnimplementedError();
+    return const SizedBox.shrink();
   }
 
 }

@@ -10,8 +10,7 @@ class TargetsArea extends HookWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        for (var i = 0; i < 4; i++)
-          TargetWidget(i),
+        for (var i = 0; i < 4; i++) TargetWidget(i),
       ],
     );
   }
@@ -27,6 +26,8 @@ class TargetWidget extends HookWidget {
     final store = inject<SolitaireStore>();
     final state = useValueListenable(store.state.targets.elementAt(index));
 
-    return PlayingCardWidget(state.cards.last);
+    return state.cards.isNotEmpty
+        ? PlayingCardWidget(state.cards.last)
+        : const SizedBox.shrink();
   }
 }
