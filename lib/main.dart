@@ -1,6 +1,9 @@
+import 'package:af_games/solitaire/solitaire_store.dart';
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
 
 void main() {
+  GetIt.I.registerSingleton(SolitaireStore());
   runApp(const MyApp());
 }
 

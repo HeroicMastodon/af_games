@@ -44,13 +44,25 @@ class CardStackState extends ValueNotifier<CardStack>
 
   @override
   removeCard(PlayingCard card) {
-    throw UnimplementedError();
+    final cards = value.cards.toList();
+    final index = cards.indexOf(card);
+
+    if (index == -1) return [];
+
+    final remainingCards = cards.getRange(0, index).toList();
+    final removedCards = cards.getRange(index, cards.length).toList();
+
+    _applyChanges(remainingCards);
+
+    return removedCards;
   }
 
   @override
-  addCards(List<PlayingCard> card) {
-    // TODO: implement addCards
-    throw UnimplementedError();
+  addCards(List<PlayingCard> cards) {
+    final cards = value.cards.toList();
+    cards.addAll(cards);
+
+    _applyChanges(cards);
   }
 
   @override

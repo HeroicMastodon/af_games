@@ -33,14 +33,21 @@ class TargetState extends ValueNotifier<Target> implements CardSource, CardDesti
 
   @override
   removeCard(PlayingCard card) {
-    // TODO: implement removeCard
-    throw UnimplementedError();
+    final cards = value.cards.toList();
+    if (cards.last != card) return [];
+    cards.removeLast();
+
+    _applyChanges(cards);
+
+    return [card];
   }
 
   @override
   addCards(List<PlayingCard> card) {
-    // TODO: implement addCards
-    throw UnimplementedError();
+    final cards = value.cards.toList();
+    cards.addAll(card);
+
+    _applyChanges(card);
   }
 
   @override

@@ -5,8 +5,11 @@ import 'package:af_games/solitaire/models/pile/pile_state.dart';
 import 'package:af_games/solitaire/models/playing_card/playing_card.dart';
 import 'package:af_games/solitaire/models/target/target_state.dart';
 import 'package:af_games/solitaire/solitaire_action/solitaire_action.dart';
+import 'package:get_it/get_it.dart';
 
 import 'solitaire_state.dart';
+
+final inject = GetIt.I.get;
 
 class SolitaireStore {
   SolitaireStore();

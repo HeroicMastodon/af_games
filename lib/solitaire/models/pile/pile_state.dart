@@ -77,8 +77,23 @@ class PileState extends ValueNotifier<Pile> implements CardSource {
 
   @override
   removeCard(PlayingCard card) {
-    // TODO: implement removeCard
-    throw UnimplementedError();
+    var visible = value.visible.toList();
+    final hidden = value.hidden.toList();
+
+    if (!visible.contains(card)) return [];
+
+    final removed = visible.last;
+    visible.removeLast();
+
+    if (hidden.isNotEmpty) {
+      final removedHidden = hidden.last.copyWith(state: const FaceUp());
+      hidden.removeLast();
+      visible = [removedHidden, ...visible];
+    }
+
+    _applyChanges(hidden, visible);
+
+    return [removed];
   }
 
   @override
