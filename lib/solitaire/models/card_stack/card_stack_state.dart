@@ -18,7 +18,7 @@ class CardStackState extends ValueNotifier<CardStack>
 
   @override
   bool canAddCard(PlayingCard card) {
-    if (value.cards.isEmpty && card is King) return true;
+    if (value.cards.isEmpty && card.suit is King) return true;
 
     final lastCard = value.cards.last;
     if (lastCard.value.value != card.value.value + 1) return false;
@@ -58,6 +58,12 @@ class CardStackState extends ValueNotifier<CardStack>
 
     final remainingCards = cards.getRange(0, index).toList();
     final removedCards = cards.getRange(index, cards.length).toList();
+    final lastCard = remainingCards.isNotEmpty ? remainingCards.last : null;
+
+    if (lastCard != null) {
+      remainingCards.removeLast();
+      remainingCards.add(lastCard.copyWith(state: const FaceUp()));
+    }
 
     _applyChanges(remainingCards);
 
@@ -66,10 +72,10 @@ class CardStackState extends ValueNotifier<CardStack>
 
   @override
   addCards(List<PlayingCard> cards) {
-    final cards = value.cards.toList();
-    cards.addAll(cards);
+    final cardsList = value.cards.toList();
+    cardsList.addAll(cards);
 
-    _applyChanges(cards);
+    _applyChanges(cardsList);
   }
 
   @override
@@ -78,10 +84,12 @@ class CardStackState extends ValueNotifier<CardStack>
   }
 
   @override
-  PlayingCard selectCard(PlayingCard card) => _updateCardState(card, const Selected());
+  PlayingCard selectCard(PlayingCard card) =>
+      _updateCardState(card, const Selected());
 
   @override
-  PlayingCard unselectCard(PlayingCard card) => _updateCardState(card, const FaceUp());
+  PlayingCard unselectCard(PlayingCard card) =>
+      _updateCardState(card, const FaceUp());
 
   PlayingCard _updateCardState(PlayingCard card, CardState state) {
     var cards = [...value.cards];

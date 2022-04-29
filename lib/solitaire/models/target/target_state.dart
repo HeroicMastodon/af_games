@@ -19,7 +19,9 @@ class TargetState extends ValueNotifier<Target>
 
   @override
   bool canAddCard(PlayingCard card) {
-    if (value.cards.isEmpty && card is Ace) return true;
+    if (value.cards.isEmpty ) {
+      return card.value is Ace;
+    }
 
     final lastCard = value.cards.last;
     if (lastCard.suit != card.suit) return false;

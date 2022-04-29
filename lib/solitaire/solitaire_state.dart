@@ -128,6 +128,7 @@ class SolitaireState {
     // if (!canMoveCardToDestination(card, destination)) return false;
     var removedCards = source.removeCard(card);
     destination.addCards(removedCards);
+    destination.unselectCard(card);
     selectedCard.value = null;
     selectedCardSource.value = null;
 
