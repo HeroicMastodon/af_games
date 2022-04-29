@@ -1,3 +1,4 @@
+import 'package:af_games/solitaire/solitaire_action/solitaire_action.dart';
 import 'package:af_games/solitaire/solitaire_store.dart';
 import 'package:af_games/solitaire/ui/card.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +15,9 @@ class DeckWidget extends HookWidget {
     return deck.cards.isNotEmpty
         ? PlayingCardWidget(
             deck.cards.last,
-            onTapped: (card) {},
+            onTapped: (card) {
+              store.takeAction(const SolitaireAction.draw());
+            },
             onDoubleTapped: (card) {},
           )
         : const SizedBox(

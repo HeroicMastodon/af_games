@@ -32,7 +32,7 @@ class PileState extends ValueNotifier<Pile> implements CardSource {
   addCard(PlayingCard card) {
     final copiesTuple = _makeCopies();
     final visibleCopy = copiesTuple.item1;
-    final hiddenCopy = value.hidden.toList();
+    final hiddenCopy = copiesTuple.item2;
 
     visibleCopy.add(card);
 

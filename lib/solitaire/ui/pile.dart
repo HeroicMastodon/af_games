@@ -11,17 +11,21 @@ class PileWidget extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final pile = useValueListenable(store.state.pile);
+    const offset = 15.0;
     return SizedBox(
       height: cardHeight,
       // OCD has kicked in on this one
       width: 3 * cardWidth + 6,
       child: Stack(
         children: [
-          for (final card in pile.visible)
-            PlayingCardWidget(
-              card,
-              onTapped: (card){},
-              onDoubleTapped: (card){},
+          for (var i = 0; i < pile.visible.length; i++)
+            Positioned(
+              left: offset * i,
+              child: PlayingCardWidget(
+                pile.visible.elementAt(i),
+                onTapped: (card){},
+                onDoubleTapped: (card){},
+              ),
             ),
         ],
       ),
