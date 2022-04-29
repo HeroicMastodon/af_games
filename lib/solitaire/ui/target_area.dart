@@ -8,10 +8,13 @@ class TargetsArea extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        for (var i = 0; i < 4; i++) TargetWidget(i),
-      ],
+    return Container(
+      padding: const EdgeInsets.all(8),
+      child: Row(
+        children: [
+          for (var i = 0; i < 4; i++) TargetWidget(i),
+        ],
+      ),
     );
   }
 }
@@ -26,12 +29,23 @@ class TargetWidget extends HookWidget {
     final store = inject<SolitaireStore>();
     final state = useValueListenable(store.state.targets.elementAt(index));
 
-    return state.cards.isNotEmpty
-        ? PlayingCardWidget(
-            state.cards.last,
-            onDoubleTapped: (card) {},
-            onTapped: (card) {},
-          )
-        : const SizedBox.shrink();
+    return Container(
+      padding: const EdgeInsets.all(8),
+      child: state.cards.isNotEmpty
+          ? PlayingCardWidget(
+              state.cards.last,
+              onDoubleTapped: (card) {},
+              onTapped: (card) {},
+            )
+          : Container(
+        height: cardHeight,
+        width: cardWidth,
+        decoration: BoxDecoration(
+          borderRadius: const BorderRadius.all(Radius.circular(4)),
+          border: Border.all(color: Colors.blueGrey, width: 2),
+          color: Colors.grey,
+        ),
+      ),
+    );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:af_games/solitaire/ui/deck.dart';
 import 'package:af_games/solitaire/ui/pile.dart';
 import 'package:af_games/solitaire/ui/stack.dart';
 import 'package:af_games/solitaire/ui/target_area.dart';
@@ -16,14 +17,17 @@ class Board extends HookWidget {
             TargetsArea(),
             Spacer(),
             PileWidget(),
-            TargetsArea(),
+            DeckWidget(),
           ],
         ),
-        Row(
-          children: [
-            for (var i = 0; i < 7; i++)
-              StackWidget(i),
-          ],
+        Padding(
+          padding: const EdgeInsets.only(left: 8.0),
+          child: Row(
+            children: [
+              for (var i = 0; i < 7; i++)
+                StackWidget(i),
+            ],
+          ),
         ),
       ],
     );

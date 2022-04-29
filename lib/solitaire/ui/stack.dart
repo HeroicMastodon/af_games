@@ -16,21 +16,24 @@ class StackWidget extends HookWidget {
 
     const offset = 15.0;
 
-    return SizedBox(
-      height: 300,
-      width: 50,
-      child: Stack(
-        children: [
-          for (var i = 0; i < cards.length; i++)
-            Positioned(
-              top: i * offset,
-              child: PlayingCardWidget(
-                cards.elementAt(i),
-                onDoubleTapped: (card) {},
-                onTapped: (card) {},
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: SizedBox(
+        height: 300,
+        width: cardWidth,
+        child: Stack(
+          children: [
+            for (var i = 0; i < cards.length; i++)
+              Positioned(
+                top: i * offset,
+                child: PlayingCardWidget(
+                  cards.elementAt(i),
+                  onDoubleTapped: (card) {},
+                  onTapped: (card) {},
+                ),
               ),
-            ),
-        ],
+          ],
+        ),
       ),
     );
   }

@@ -2,6 +2,9 @@ import 'package:af_games/solitaire/models/playing_card/playing_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
+const cardHeight = 54.0;
+const cardWidth = 25.0;
+
 class PlayingCardWidget extends HookWidget {
   const PlayingCardWidget(
     this.card, {
@@ -31,8 +34,8 @@ class PlayingCardWidget extends HookWidget {
             Radius.circular(4),
           ),
         ),
-        height: 54,
-        width: 25,
+        height: cardHeight,
+        width: cardWidth,
         child: card.state.when(
           up: () => _CardFace(card),
           down: () => const _CardBack(),
