@@ -159,7 +159,7 @@ class SolitaireState {
     var score = (pile.allCards.length + deck.count) * (stackValue + targetValue);
     score += cardStacks.fold(
       0,
-      (previousValue, stack) => (previousValue + stack.count) * targetValue,
+      (previousValue, stack) => previousValue + ( stack.count * targetValue ),
     );
     this.score.value += score;
 
