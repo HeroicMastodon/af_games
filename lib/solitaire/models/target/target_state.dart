@@ -5,8 +5,10 @@ import 'package:flutter/material.dart';
 
 import 'target.dart';
 
-class TargetState extends ValueNotifier<Target> implements CardSource, CardDestination {
+class TargetState extends ValueNotifier<Target>
+    implements CardSource, CardDestination {
   TargetState(Target value) : super(value);
+
   factory TargetState.initial(int order) {
     return TargetState(Target([], order));
   }
@@ -14,13 +16,20 @@ class TargetState extends ValueNotifier<Target> implements CardSource, CardDesti
   empty() {
     _applyChanges([]);
   }
-  
+
+  @override
   bool canAddCard(PlayingCard card) {
-    throw Error();
+    if (value.cards.isEmpty && card is Ace) return true;
+
+    final lastCard = value.cards.last;
+    if (lastCard.suit != card.suit) return false;
+    if (lastCard.value.value != card.value.value - 1) return false;
+
+    return true;
   }
 
   bool get isEmpty => value.cards.isEmpty;
-  
+
   addCard(PlayingCard card) {
     final cardsCopy = value.cards.toList();
     cardsCopy.add(card);

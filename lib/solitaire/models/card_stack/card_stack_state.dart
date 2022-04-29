@@ -16,8 +16,15 @@ class CardStackState extends ValueNotifier<CardStack>
     _applyChanges([]);
   }
 
+  @override
   bool canAddCard(PlayingCard card) {
-    throw Error();
+    if (value.cards.isEmpty && card is King) return true;
+
+    final lastCard = value.cards.last;
+    if (lastCard.value.value != card.value.value + 1) return false;
+    if (lastCard.suit.color == card.suit.color) return false;
+
+    return true;
   }
 
   addCard(PlayingCard card) {
