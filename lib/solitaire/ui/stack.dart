@@ -14,10 +14,10 @@ class StackWidget extends HookWidget {
     final stack = useValueListenable(store.state.cardStacks.elementAt(index));
     final cards = stack.cards;
 
-    const offset = 5.0;
+    const offset = 15.0;
 
     return SizedBox(
-      height: 250,
+      height: 300,
       width: 50,
       child: Stack(
         children: [
@@ -26,6 +26,8 @@ class StackWidget extends HookWidget {
               top: i * offset,
               child: PlayingCardWidget(
                 cards.elementAt(i),
+                onDoubleTapped: (card) {},
+                onTapped: (card) {},
               ),
             ),
         ],

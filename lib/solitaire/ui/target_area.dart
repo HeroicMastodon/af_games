@@ -27,7 +27,11 @@ class TargetWidget extends HookWidget {
     final state = useValueListenable(store.state.targets.elementAt(index));
 
     return state.cards.isNotEmpty
-        ? PlayingCardWidget(state.cards.last)
+        ? PlayingCardWidget(
+            state.cards.last,
+            onDoubleTapped: (card) {},
+            onTapped: (card) {},
+          )
         : const SizedBox.shrink();
   }
 }
