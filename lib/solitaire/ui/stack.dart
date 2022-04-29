@@ -1,6 +1,7 @@
 import 'package:af_games/solitaire/solitaire_action/solitaire_action.dart';
 import 'package:af_games/solitaire/solitaire_store.dart';
 import 'package:af_games/solitaire/ui/card.dart';
+import 'package:af_games/solitaire/ui/empty_stack.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
@@ -25,6 +26,18 @@ class StackWidget extends HookWidget {
         width: cardWidth,
         child: Stack(
           children: [
+            if (cards.isEmpty)
+              EmptyStack(
+                onTapped: () {
+                  if (store.state.selectedCard.value != null) {
+                    store.takeAction(SolitaireAction.moveCard(
+                      store.state.selectedCard.value!,
+                      store.state.selectedCardSource.value!,
+                      stackState,
+                    ));
+                  }
+                },
+              ),
             for (var i = 0; i < cards.length; i++)
               Positioned(
                 top: i * offset,
