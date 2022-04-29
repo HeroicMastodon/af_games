@@ -16,13 +16,23 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final store = inject<SolitaireStore>();
+
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
-        appBar: AppBar(title: const Text("Solitaire")),
+        appBar: AppBar(
+          title: const Text("Solitaire"),
+          actions: [
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.refresh),
+            )
+          ],
+        ),
         body: const Board(),
       ),
     );

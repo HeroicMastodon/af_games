@@ -13,9 +13,8 @@ class Board extends HookWidget {
     return Column(
       children: [
         Row(
-          children: const [
-            TargetsArea(),
-            Spacer(),
+          children: [
+            const TargetsArea(),
             PileWidget(),
             DeckWidget(),
           ],
