@@ -51,7 +51,10 @@ class SolitaireStore {
       moveCard: (card, source, destination) {
         final canMove = state.canMoveCardToDestination(card, destination);
 
-        if (!canMove) return const ActionResult.failed("invalid move");
+        if (!canMove) {
+          state.unSelectCard(card, source);
+          return const ActionResult.failed("invalid move");
+        }
 
         state.moveCardToDestination(card, source, destination);
         _updateScore(destination, source);
@@ -82,6 +85,8 @@ class SolitaireStore {
         action is! SolitaireActionsNewGame) {
       actionsTaken.add(action);
     }
+
+    state.canAutoComplete.value = state.isWon;
 
     return result;
   }

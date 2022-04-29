@@ -78,19 +78,20 @@ class CardStackState extends ValueNotifier<CardStack>
   }
 
   @override
-  bool selectCard(PlayingCard card) => _updateCardState(card, const Selected());
+  PlayingCard selectCard(PlayingCard card) => _updateCardState(card, const Selected());
 
   @override
-  bool unselectCard(PlayingCard card) => _updateCardState(card, const FaceUp());
+  PlayingCard unselectCard(PlayingCard card) => _updateCardState(card, const FaceUp());
 
-  bool _updateCardState(PlayingCard card, CardState state) {
+  PlayingCard _updateCardState(PlayingCard card, CardState state) {
     var cards = [...value.cards];
     var index = cards.indexOf(card);
 
-    if (index == -1) return false;
+    if (index == -1) return card;
 
-    cards[index] = card.copyWith(state: state);
+    var newCard = card.copyWith(state: state);
+    cards[index] = newCard;
     value = value.copyWith(cards: cards);
-    return true;
+    return newCard;
   }
 }

@@ -22,6 +22,7 @@ class SolitaireState {
     for (var i = 0; i < 4; i++) TargetState.initial(i)
   ];
   ValueNotifier<PlayingCard?> selectedCard = ValueNotifier(null);
+  ValueNotifier<CardSource?> selectedCardSource = ValueNotifier(null);
   ValueNotifier<int> score = ValueNotifier(0);
   ValueNotifier<bool> canAutoComplete = ValueNotifier(false);
   
@@ -127,6 +128,8 @@ class SolitaireState {
     // if (!canMoveCardToDestination(card, destination)) return false;
     var removedCards = source.removeCard(card);
     destination.addCards(removedCards);
+    selectedCard.value = null;
+    selectedCardSource.value = null;
 
     // if (destination is TargetState) {
     //   score.cardAddedToTarget();
@@ -174,10 +177,23 @@ class SolitaireState {
   }
 
   String? selectCard(PlayingCard card, CardSource source) {
-    var containsCard = source.containsCard(card);
+    if (card.state is FaceDown) return "Card Cannot be selected";
 
+    var containsCard = source.containsCard(card);
     if (!containsCard) return "Card was not found at source";
 
-    source.selectCard(card);
+    final selectedCard = source.selectCard(card);
+    if (selectedCard == card) return "Card could not be selected";
+
+    this.selectedCard.value = selectedCard;
+    selectedCardSource.value = source;
+
+    return null;
+  }
+
+  unSelectCard(PlayingCard card, CardSource source) {
+    source.unselectCard(card);
+    selectedCard.value = null;
+    selectedCardSource.value = null;
   }
 }

@@ -20,26 +20,29 @@ class PlayingCardWidget extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () => onTapped(card),
-      onDoubleTap: () => onDoubleTapped(card),
-      child: Container(
-        decoration: BoxDecoration(
-          border: Border.all(
-            color: Colors.black,
-            width: 2,
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      child: GestureDetector(
+        onTap: () => onTapped(card),
+        onDoubleTap: () => onDoubleTapped(card),
+        child: Container(
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: card.state is Selected ? Colors.lightBlueAccent : Colors.black,
+              width: 2,
+            ),
+            color: Colors.white,
+            borderRadius: const BorderRadius.all(
+              Radius.circular(4),
+            ),
           ),
-          color: Colors.white,
-          borderRadius: const BorderRadius.all(
-            Radius.circular(4),
+          height: cardHeight,
+          width: cardWidth,
+          child: card.state.when(
+            up: () => _CardFace(card),
+            down: () => const _CardBack(),
+            selected: () => _CardFace(card),
           ),
-        ),
-        height: cardHeight,
-        width: cardWidth,
-        child: card.state.when(
-          up: () => _CardFace(card),
-          down: () => const _CardBack(),
-          selected: () => _CardFace(card),
         ),
       ),
     );
