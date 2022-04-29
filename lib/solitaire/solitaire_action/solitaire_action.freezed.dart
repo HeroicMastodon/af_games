@@ -63,6 +63,10 @@ class _$SolitaireActionTearOff {
   SolitaireActionUndo undo() {
     return const SolitaireActionUndo();
   }
+
+  _SolitaireActionRefillDeck refillDeck() {
+    return const _SolitaireActionRefillDeck();
+  }
 }
 
 /// @nodoc
@@ -82,6 +86,7 @@ mixin _$SolitaireAction {
         moveCard,
     required TResult Function() autoComplete,
     required TResult Function() undo,
+    required TResult Function() refillDeck,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -96,6 +101,7 @@ mixin _$SolitaireAction {
         moveCard,
     TResult Function()? autoComplete,
     TResult Function()? undo,
+    TResult Function()? refillDeck,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -110,6 +116,7 @@ mixin _$SolitaireAction {
         moveCard,
     TResult Function()? autoComplete,
     TResult Function()? undo,
+    TResult Function()? refillDeck,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -123,6 +130,7 @@ mixin _$SolitaireAction {
     required TResult Function(_SolitaireActionMoveCard value) moveCard,
     required TResult Function(SolitaireActionAutoComplete value) autoComplete,
     required TResult Function(SolitaireActionUndo value) undo,
+    required TResult Function(_SolitaireActionRefillDeck value) refillDeck,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -135,6 +143,7 @@ mixin _$SolitaireAction {
     TResult Function(_SolitaireActionMoveCard value)? moveCard,
     TResult Function(SolitaireActionAutoComplete value)? autoComplete,
     TResult Function(SolitaireActionUndo value)? undo,
+    TResult Function(_SolitaireActionRefillDeck value)? refillDeck,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -147,6 +156,7 @@ mixin _$SolitaireAction {
     TResult Function(_SolitaireActionMoveCard value)? moveCard,
     TResult Function(SolitaireActionAutoComplete value)? autoComplete,
     TResult Function(SolitaireActionUndo value)? undo,
+    TResult Function(_SolitaireActionRefillDeck value)? refillDeck,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -220,6 +230,7 @@ class _$_SolitaireActionDraw implements _SolitaireActionDraw {
         moveCard,
     required TResult Function() autoComplete,
     required TResult Function() undo,
+    required TResult Function() refillDeck,
   }) {
     return draw();
   }
@@ -237,6 +248,7 @@ class _$_SolitaireActionDraw implements _SolitaireActionDraw {
         moveCard,
     TResult Function()? autoComplete,
     TResult Function()? undo,
+    TResult Function()? refillDeck,
   }) {
     return draw?.call();
   }
@@ -254,6 +266,7 @@ class _$_SolitaireActionDraw implements _SolitaireActionDraw {
         moveCard,
     TResult Function()? autoComplete,
     TResult Function()? undo,
+    TResult Function()? refillDeck,
     required TResult orElse(),
   }) {
     if (draw != null) {
@@ -273,6 +286,7 @@ class _$_SolitaireActionDraw implements _SolitaireActionDraw {
     required TResult Function(_SolitaireActionMoveCard value) moveCard,
     required TResult Function(SolitaireActionAutoComplete value) autoComplete,
     required TResult Function(SolitaireActionUndo value) undo,
+    required TResult Function(_SolitaireActionRefillDeck value) refillDeck,
   }) {
     return draw(this);
   }
@@ -288,6 +302,7 @@ class _$_SolitaireActionDraw implements _SolitaireActionDraw {
     TResult Function(_SolitaireActionMoveCard value)? moveCard,
     TResult Function(SolitaireActionAutoComplete value)? autoComplete,
     TResult Function(SolitaireActionUndo value)? undo,
+    TResult Function(_SolitaireActionRefillDeck value)? refillDeck,
   }) {
     return draw?.call(this);
   }
@@ -303,6 +318,7 @@ class _$_SolitaireActionDraw implements _SolitaireActionDraw {
     TResult Function(_SolitaireActionMoveCard value)? moveCard,
     TResult Function(SolitaireActionAutoComplete value)? autoComplete,
     TResult Function(SolitaireActionUndo value)? undo,
+    TResult Function(_SolitaireActionRefillDeck value)? refillDeck,
     required TResult orElse(),
   }) {
     if (draw != null) {
@@ -367,6 +383,7 @@ class _$SolitaireActionsNewGame implements SolitaireActionsNewGame {
         moveCard,
     required TResult Function() autoComplete,
     required TResult Function() undo,
+    required TResult Function() refillDeck,
   }) {
     return newGame();
   }
@@ -384,6 +401,7 @@ class _$SolitaireActionsNewGame implements SolitaireActionsNewGame {
         moveCard,
     TResult Function()? autoComplete,
     TResult Function()? undo,
+    TResult Function()? refillDeck,
   }) {
     return newGame?.call();
   }
@@ -401,6 +419,7 @@ class _$SolitaireActionsNewGame implements SolitaireActionsNewGame {
         moveCard,
     TResult Function()? autoComplete,
     TResult Function()? undo,
+    TResult Function()? refillDeck,
     required TResult orElse(),
   }) {
     if (newGame != null) {
@@ -420,6 +439,7 @@ class _$SolitaireActionsNewGame implements SolitaireActionsNewGame {
     required TResult Function(_SolitaireActionMoveCard value) moveCard,
     required TResult Function(SolitaireActionAutoComplete value) autoComplete,
     required TResult Function(SolitaireActionUndo value) undo,
+    required TResult Function(_SolitaireActionRefillDeck value) refillDeck,
   }) {
     return newGame(this);
   }
@@ -435,6 +455,7 @@ class _$SolitaireActionsNewGame implements SolitaireActionsNewGame {
     TResult Function(_SolitaireActionMoveCard value)? moveCard,
     TResult Function(SolitaireActionAutoComplete value)? autoComplete,
     TResult Function(SolitaireActionUndo value)? undo,
+    TResult Function(_SolitaireActionRefillDeck value)? refillDeck,
   }) {
     return newGame?.call(this);
   }
@@ -450,6 +471,7 @@ class _$SolitaireActionsNewGame implements SolitaireActionsNewGame {
     TResult Function(_SolitaireActionMoveCard value)? moveCard,
     TResult Function(SolitaireActionAutoComplete value)? autoComplete,
     TResult Function(SolitaireActionUndo value)? undo,
+    TResult Function(_SolitaireActionRefillDeck value)? refillDeck,
     required TResult orElse(),
   }) {
     if (newGame != null) {
@@ -559,6 +581,7 @@ class _$_SolitaireActionAutoMove implements _SolitaireActionAutoMove {
         moveCard,
     required TResult Function() autoComplete,
     required TResult Function() undo,
+    required TResult Function() refillDeck,
   }) {
     return autoMove(card, source);
   }
@@ -576,6 +599,7 @@ class _$_SolitaireActionAutoMove implements _SolitaireActionAutoMove {
         moveCard,
     TResult Function()? autoComplete,
     TResult Function()? undo,
+    TResult Function()? refillDeck,
   }) {
     return autoMove?.call(card, source);
   }
@@ -593,6 +617,7 @@ class _$_SolitaireActionAutoMove implements _SolitaireActionAutoMove {
         moveCard,
     TResult Function()? autoComplete,
     TResult Function()? undo,
+    TResult Function()? refillDeck,
     required TResult orElse(),
   }) {
     if (autoMove != null) {
@@ -612,6 +637,7 @@ class _$_SolitaireActionAutoMove implements _SolitaireActionAutoMove {
     required TResult Function(_SolitaireActionMoveCard value) moveCard,
     required TResult Function(SolitaireActionAutoComplete value) autoComplete,
     required TResult Function(SolitaireActionUndo value) undo,
+    required TResult Function(_SolitaireActionRefillDeck value) refillDeck,
   }) {
     return autoMove(this);
   }
@@ -627,6 +653,7 @@ class _$_SolitaireActionAutoMove implements _SolitaireActionAutoMove {
     TResult Function(_SolitaireActionMoveCard value)? moveCard,
     TResult Function(SolitaireActionAutoComplete value)? autoComplete,
     TResult Function(SolitaireActionUndo value)? undo,
+    TResult Function(_SolitaireActionRefillDeck value)? refillDeck,
   }) {
     return autoMove?.call(this);
   }
@@ -642,6 +669,7 @@ class _$_SolitaireActionAutoMove implements _SolitaireActionAutoMove {
     TResult Function(_SolitaireActionMoveCard value)? moveCard,
     TResult Function(SolitaireActionAutoComplete value)? autoComplete,
     TResult Function(SolitaireActionUndo value)? undo,
+    TResult Function(_SolitaireActionRefillDeck value)? refillDeck,
     required TResult orElse(),
   }) {
     if (autoMove != null) {
@@ -759,6 +787,7 @@ class _$_SolitaireActionSelectCard implements _SolitaireActionSelectCard {
         moveCard,
     required TResult Function() autoComplete,
     required TResult Function() undo,
+    required TResult Function() refillDeck,
   }) {
     return selectCard(card, source);
   }
@@ -776,6 +805,7 @@ class _$_SolitaireActionSelectCard implements _SolitaireActionSelectCard {
         moveCard,
     TResult Function()? autoComplete,
     TResult Function()? undo,
+    TResult Function()? refillDeck,
   }) {
     return selectCard?.call(card, source);
   }
@@ -793,6 +823,7 @@ class _$_SolitaireActionSelectCard implements _SolitaireActionSelectCard {
         moveCard,
     TResult Function()? autoComplete,
     TResult Function()? undo,
+    TResult Function()? refillDeck,
     required TResult orElse(),
   }) {
     if (selectCard != null) {
@@ -812,6 +843,7 @@ class _$_SolitaireActionSelectCard implements _SolitaireActionSelectCard {
     required TResult Function(_SolitaireActionMoveCard value) moveCard,
     required TResult Function(SolitaireActionAutoComplete value) autoComplete,
     required TResult Function(SolitaireActionUndo value) undo,
+    required TResult Function(_SolitaireActionRefillDeck value) refillDeck,
   }) {
     return selectCard(this);
   }
@@ -827,6 +859,7 @@ class _$_SolitaireActionSelectCard implements _SolitaireActionSelectCard {
     TResult Function(_SolitaireActionMoveCard value)? moveCard,
     TResult Function(SolitaireActionAutoComplete value)? autoComplete,
     TResult Function(SolitaireActionUndo value)? undo,
+    TResult Function(_SolitaireActionRefillDeck value)? refillDeck,
   }) {
     return selectCard?.call(this);
   }
@@ -842,6 +875,7 @@ class _$_SolitaireActionSelectCard implements _SolitaireActionSelectCard {
     TResult Function(_SolitaireActionMoveCard value)? moveCard,
     TResult Function(SolitaireActionAutoComplete value)? autoComplete,
     TResult Function(SolitaireActionUndo value)? undo,
+    TResult Function(_SolitaireActionRefillDeck value)? refillDeck,
     required TResult orElse(),
   }) {
     if (selectCard != null) {
@@ -960,6 +994,7 @@ class _$_SolitaireActionUnselectCard implements _SolitaireActionUnselectCard {
         moveCard,
     required TResult Function() autoComplete,
     required TResult Function() undo,
+    required TResult Function() refillDeck,
   }) {
     return unselectCard(card, source);
   }
@@ -977,6 +1012,7 @@ class _$_SolitaireActionUnselectCard implements _SolitaireActionUnselectCard {
         moveCard,
     TResult Function()? autoComplete,
     TResult Function()? undo,
+    TResult Function()? refillDeck,
   }) {
     return unselectCard?.call(card, source);
   }
@@ -994,6 +1030,7 @@ class _$_SolitaireActionUnselectCard implements _SolitaireActionUnselectCard {
         moveCard,
     TResult Function()? autoComplete,
     TResult Function()? undo,
+    TResult Function()? refillDeck,
     required TResult orElse(),
   }) {
     if (unselectCard != null) {
@@ -1013,6 +1050,7 @@ class _$_SolitaireActionUnselectCard implements _SolitaireActionUnselectCard {
     required TResult Function(_SolitaireActionMoveCard value) moveCard,
     required TResult Function(SolitaireActionAutoComplete value) autoComplete,
     required TResult Function(SolitaireActionUndo value) undo,
+    required TResult Function(_SolitaireActionRefillDeck value) refillDeck,
   }) {
     return unselectCard(this);
   }
@@ -1028,6 +1066,7 @@ class _$_SolitaireActionUnselectCard implements _SolitaireActionUnselectCard {
     TResult Function(_SolitaireActionMoveCard value)? moveCard,
     TResult Function(SolitaireActionAutoComplete value)? autoComplete,
     TResult Function(SolitaireActionUndo value)? undo,
+    TResult Function(_SolitaireActionRefillDeck value)? refillDeck,
   }) {
     return unselectCard?.call(this);
   }
@@ -1043,6 +1082,7 @@ class _$_SolitaireActionUnselectCard implements _SolitaireActionUnselectCard {
     TResult Function(_SolitaireActionMoveCard value)? moveCard,
     TResult Function(SolitaireActionAutoComplete value)? autoComplete,
     TResult Function(SolitaireActionUndo value)? undo,
+    TResult Function(_SolitaireActionRefillDeck value)? refillDeck,
     required TResult orElse(),
   }) {
     if (unselectCard != null) {
@@ -1169,6 +1209,7 @@ class _$_SolitaireActionMoveCard implements _SolitaireActionMoveCard {
         moveCard,
     required TResult Function() autoComplete,
     required TResult Function() undo,
+    required TResult Function() refillDeck,
   }) {
     return moveCard(card, source, destination);
   }
@@ -1186,6 +1227,7 @@ class _$_SolitaireActionMoveCard implements _SolitaireActionMoveCard {
         moveCard,
     TResult Function()? autoComplete,
     TResult Function()? undo,
+    TResult Function()? refillDeck,
   }) {
     return moveCard?.call(card, source, destination);
   }
@@ -1203,6 +1245,7 @@ class _$_SolitaireActionMoveCard implements _SolitaireActionMoveCard {
         moveCard,
     TResult Function()? autoComplete,
     TResult Function()? undo,
+    TResult Function()? refillDeck,
     required TResult orElse(),
   }) {
     if (moveCard != null) {
@@ -1222,6 +1265,7 @@ class _$_SolitaireActionMoveCard implements _SolitaireActionMoveCard {
     required TResult Function(_SolitaireActionMoveCard value) moveCard,
     required TResult Function(SolitaireActionAutoComplete value) autoComplete,
     required TResult Function(SolitaireActionUndo value) undo,
+    required TResult Function(_SolitaireActionRefillDeck value) refillDeck,
   }) {
     return moveCard(this);
   }
@@ -1237,6 +1281,7 @@ class _$_SolitaireActionMoveCard implements _SolitaireActionMoveCard {
     TResult Function(_SolitaireActionMoveCard value)? moveCard,
     TResult Function(SolitaireActionAutoComplete value)? autoComplete,
     TResult Function(SolitaireActionUndo value)? undo,
+    TResult Function(_SolitaireActionRefillDeck value)? refillDeck,
   }) {
     return moveCard?.call(this);
   }
@@ -1252,6 +1297,7 @@ class _$_SolitaireActionMoveCard implements _SolitaireActionMoveCard {
     TResult Function(_SolitaireActionMoveCard value)? moveCard,
     TResult Function(SolitaireActionAutoComplete value)? autoComplete,
     TResult Function(SolitaireActionUndo value)? undo,
+    TResult Function(_SolitaireActionRefillDeck value)? refillDeck,
     required TResult orElse(),
   }) {
     if (moveCard != null) {
@@ -1328,6 +1374,7 @@ class _$SolitaireActionAutoComplete implements SolitaireActionAutoComplete {
         moveCard,
     required TResult Function() autoComplete,
     required TResult Function() undo,
+    required TResult Function() refillDeck,
   }) {
     return autoComplete();
   }
@@ -1345,6 +1392,7 @@ class _$SolitaireActionAutoComplete implements SolitaireActionAutoComplete {
         moveCard,
     TResult Function()? autoComplete,
     TResult Function()? undo,
+    TResult Function()? refillDeck,
   }) {
     return autoComplete?.call();
   }
@@ -1362,6 +1410,7 @@ class _$SolitaireActionAutoComplete implements SolitaireActionAutoComplete {
         moveCard,
     TResult Function()? autoComplete,
     TResult Function()? undo,
+    TResult Function()? refillDeck,
     required TResult orElse(),
   }) {
     if (autoComplete != null) {
@@ -1381,6 +1430,7 @@ class _$SolitaireActionAutoComplete implements SolitaireActionAutoComplete {
     required TResult Function(_SolitaireActionMoveCard value) moveCard,
     required TResult Function(SolitaireActionAutoComplete value) autoComplete,
     required TResult Function(SolitaireActionUndo value) undo,
+    required TResult Function(_SolitaireActionRefillDeck value) refillDeck,
   }) {
     return autoComplete(this);
   }
@@ -1396,6 +1446,7 @@ class _$SolitaireActionAutoComplete implements SolitaireActionAutoComplete {
     TResult Function(_SolitaireActionMoveCard value)? moveCard,
     TResult Function(SolitaireActionAutoComplete value)? autoComplete,
     TResult Function(SolitaireActionUndo value)? undo,
+    TResult Function(_SolitaireActionRefillDeck value)? refillDeck,
   }) {
     return autoComplete?.call(this);
   }
@@ -1411,6 +1462,7 @@ class _$SolitaireActionAutoComplete implements SolitaireActionAutoComplete {
     TResult Function(_SolitaireActionMoveCard value)? moveCard,
     TResult Function(SolitaireActionAutoComplete value)? autoComplete,
     TResult Function(SolitaireActionUndo value)? undo,
+    TResult Function(_SolitaireActionRefillDeck value)? refillDeck,
     required TResult orElse(),
   }) {
     if (autoComplete != null) {
@@ -1475,6 +1527,7 @@ class _$SolitaireActionUndo implements SolitaireActionUndo {
         moveCard,
     required TResult Function() autoComplete,
     required TResult Function() undo,
+    required TResult Function() refillDeck,
   }) {
     return undo();
   }
@@ -1492,6 +1545,7 @@ class _$SolitaireActionUndo implements SolitaireActionUndo {
         moveCard,
     TResult Function()? autoComplete,
     TResult Function()? undo,
+    TResult Function()? refillDeck,
   }) {
     return undo?.call();
   }
@@ -1509,6 +1563,7 @@ class _$SolitaireActionUndo implements SolitaireActionUndo {
         moveCard,
     TResult Function()? autoComplete,
     TResult Function()? undo,
+    TResult Function()? refillDeck,
     required TResult orElse(),
   }) {
     if (undo != null) {
@@ -1528,6 +1583,7 @@ class _$SolitaireActionUndo implements SolitaireActionUndo {
     required TResult Function(_SolitaireActionMoveCard value) moveCard,
     required TResult Function(SolitaireActionAutoComplete value) autoComplete,
     required TResult Function(SolitaireActionUndo value) undo,
+    required TResult Function(_SolitaireActionRefillDeck value) refillDeck,
   }) {
     return undo(this);
   }
@@ -1543,6 +1599,7 @@ class _$SolitaireActionUndo implements SolitaireActionUndo {
     TResult Function(_SolitaireActionMoveCard value)? moveCard,
     TResult Function(SolitaireActionAutoComplete value)? autoComplete,
     TResult Function(SolitaireActionUndo value)? undo,
+    TResult Function(_SolitaireActionRefillDeck value)? refillDeck,
   }) {
     return undo?.call(this);
   }
@@ -1558,6 +1615,7 @@ class _$SolitaireActionUndo implements SolitaireActionUndo {
     TResult Function(_SolitaireActionMoveCard value)? moveCard,
     TResult Function(SolitaireActionAutoComplete value)? autoComplete,
     TResult Function(SolitaireActionUndo value)? undo,
+    TResult Function(_SolitaireActionRefillDeck value)? refillDeck,
     required TResult orElse(),
   }) {
     if (undo != null) {
@@ -1569,6 +1627,161 @@ class _$SolitaireActionUndo implements SolitaireActionUndo {
 
 abstract class SolitaireActionUndo implements SolitaireAction {
   const factory SolitaireActionUndo() = _$SolitaireActionUndo;
+}
+
+/// @nodoc
+abstract class _$SolitaireActionRefillDeckCopyWith<$Res> {
+  factory _$SolitaireActionRefillDeckCopyWith(_SolitaireActionRefillDeck value,
+          $Res Function(_SolitaireActionRefillDeck) then) =
+      __$SolitaireActionRefillDeckCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$SolitaireActionRefillDeckCopyWithImpl<$Res>
+    extends _$SolitaireActionCopyWithImpl<$Res>
+    implements _$SolitaireActionRefillDeckCopyWith<$Res> {
+  __$SolitaireActionRefillDeckCopyWithImpl(_SolitaireActionRefillDeck _value,
+      $Res Function(_SolitaireActionRefillDeck) _then)
+      : super(_value, (v) => _then(v as _SolitaireActionRefillDeck));
+
+  @override
+  _SolitaireActionRefillDeck get _value =>
+      super._value as _SolitaireActionRefillDeck;
+}
+
+/// @nodoc
+
+class _$_SolitaireActionRefillDeck implements _SolitaireActionRefillDeck {
+  const _$_SolitaireActionRefillDeck();
+
+  @override
+  String toString() {
+    return 'SolitaireAction.refillDeck()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _SolitaireActionRefillDeck);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() draw,
+    required TResult Function() newGame,
+    required TResult Function(PlayingCard card, CardSource source) autoMove,
+    required TResult Function(PlayingCard card, CardSource source) selectCard,
+    required TResult Function(PlayingCard card, CardSource source) unselectCard,
+    required TResult Function(
+            PlayingCard card, CardSource source, CardDestination destination)
+        moveCard,
+    required TResult Function() autoComplete,
+    required TResult Function() undo,
+    required TResult Function() refillDeck,
+  }) {
+    return refillDeck();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? draw,
+    TResult Function()? newGame,
+    TResult Function(PlayingCard card, CardSource source)? autoMove,
+    TResult Function(PlayingCard card, CardSource source)? selectCard,
+    TResult Function(PlayingCard card, CardSource source)? unselectCard,
+    TResult Function(
+            PlayingCard card, CardSource source, CardDestination destination)?
+        moveCard,
+    TResult Function()? autoComplete,
+    TResult Function()? undo,
+    TResult Function()? refillDeck,
+  }) {
+    return refillDeck?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? draw,
+    TResult Function()? newGame,
+    TResult Function(PlayingCard card, CardSource source)? autoMove,
+    TResult Function(PlayingCard card, CardSource source)? selectCard,
+    TResult Function(PlayingCard card, CardSource source)? unselectCard,
+    TResult Function(
+            PlayingCard card, CardSource source, CardDestination destination)?
+        moveCard,
+    TResult Function()? autoComplete,
+    TResult Function()? undo,
+    TResult Function()? refillDeck,
+    required TResult orElse(),
+  }) {
+    if (refillDeck != null) {
+      return refillDeck();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SolitaireActionDraw value) draw,
+    required TResult Function(SolitaireActionsNewGame value) newGame,
+    required TResult Function(_SolitaireActionAutoMove value) autoMove,
+    required TResult Function(_SolitaireActionSelectCard value) selectCard,
+    required TResult Function(_SolitaireActionUnselectCard value) unselectCard,
+    required TResult Function(_SolitaireActionMoveCard value) moveCard,
+    required TResult Function(SolitaireActionAutoComplete value) autoComplete,
+    required TResult Function(SolitaireActionUndo value) undo,
+    required TResult Function(_SolitaireActionRefillDeck value) refillDeck,
+  }) {
+    return refillDeck(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SolitaireActionDraw value)? draw,
+    TResult Function(SolitaireActionsNewGame value)? newGame,
+    TResult Function(_SolitaireActionAutoMove value)? autoMove,
+    TResult Function(_SolitaireActionSelectCard value)? selectCard,
+    TResult Function(_SolitaireActionUnselectCard value)? unselectCard,
+    TResult Function(_SolitaireActionMoveCard value)? moveCard,
+    TResult Function(SolitaireActionAutoComplete value)? autoComplete,
+    TResult Function(SolitaireActionUndo value)? undo,
+    TResult Function(_SolitaireActionRefillDeck value)? refillDeck,
+  }) {
+    return refillDeck?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SolitaireActionDraw value)? draw,
+    TResult Function(SolitaireActionsNewGame value)? newGame,
+    TResult Function(_SolitaireActionAutoMove value)? autoMove,
+    TResult Function(_SolitaireActionSelectCard value)? selectCard,
+    TResult Function(_SolitaireActionUnselectCard value)? unselectCard,
+    TResult Function(_SolitaireActionMoveCard value)? moveCard,
+    TResult Function(SolitaireActionAutoComplete value)? autoComplete,
+    TResult Function(SolitaireActionUndo value)? undo,
+    TResult Function(_SolitaireActionRefillDeck value)? refillDeck,
+    required TResult orElse(),
+  }) {
+    if (refillDeck != null) {
+      return refillDeck(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SolitaireActionRefillDeck implements SolitaireAction {
+  const factory _SolitaireActionRefillDeck() = _$_SolitaireActionRefillDeck;
 }
 
 /// @nodoc

@@ -26,6 +26,8 @@ class SolitaireAction with _$SolitaireAction {
   const factory SolitaireAction.autoComplete() = SolitaireActionAutoComplete;
 
   const factory SolitaireAction.undo() = SolitaireActionUndo;
+  const factory SolitaireAction.refillDeck() = _SolitaireActionRefillDeck;
+
 }
 
 @freezed

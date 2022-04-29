@@ -52,7 +52,27 @@ class AutoCompleteButton extends HookWidget {
     final canAutoComplete = useValueListenable(store.state.canAutoComplete);
     return IconButton(
       onPressed: canAutoComplete
-          ? () => store.takeAction(const SolitaireAction.autoComplete())
+          ? () async {
+              store.takeAction(const SolitaireAction.autoComplete());
+              await showDialog(
+                context: context,
+                builder: (context) {
+                  return AlertDialog(
+                    title: Text(
+                        "You win! - Final Score: ${store.state.score.value}"),
+                    actions: [
+                      ElevatedButton(
+                        onPressed: () {
+                          store.takeAction(const SolitaireAction.newGame());
+                          Navigator.of(context).pop();
+                        },
+                        child: const Text("Play again"),
+                      ),
+                    ],
+                  );
+                },
+              );
+            }
           : null,
       icon: const Icon(Icons.done_all),
     );

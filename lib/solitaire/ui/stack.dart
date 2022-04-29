@@ -15,10 +15,13 @@ class StackWidget extends HookWidget {
     const visibleOffset = 30.0;
     const hiddenOffset = 5.0;
     var lastHiddenIndex = cards.lastIndexWhere((e) => e.state is FaceDown);
+
     if (lastHiddenIndex == -1) return index * visibleOffset;
+
+    var newIndex = (index - lastHiddenIndex-1);
     var offset = lastHiddenIndex >= index
         ? hiddenOffset * index
-        : (lastHiddenIndex * hiddenOffset) + ((index - lastHiddenIndex - 1) * visibleOffset);
+        : (( lastHiddenIndex + 1) * hiddenOffset) + (newIndex * visibleOffset);
 
     return offset;
   }
@@ -33,7 +36,7 @@ class StackWidget extends HookWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: SizedBox(
-        height: 300,
+        height: 400,
         width: cardWidth,
         child: Stack(
           children: [

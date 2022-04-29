@@ -83,6 +83,10 @@ class SolitaireStore {
 
         return const ActionResult.success();
       },
+      refillDeck: () {
+        state.resetDeck();
+        return const ActionResult.success();
+      },
     );
 
     if (action is! SolitaireActionUndo &&
@@ -117,6 +121,9 @@ class SolitaireStore {
       },
       undo: () => const ActionResult.failed("Cannot undo an undo."),
       unselectCard: (PlayingCard card, CardSource source) {
+        return const ActionResult.failed("not implemented");
+      },
+      refillDeck: () {
         return const ActionResult.failed("not implemented");
       },
     );
