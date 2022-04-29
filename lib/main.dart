@@ -12,12 +12,13 @@ void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends HookWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final store = inject<SolitaireStore>();
+    final score = useValueListenable(store.state.score);
 
     return MaterialApp(
       title: 'Flutter Demo',
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: const Text("Solitaire"),
+          title: Text("Solitaire - Score: $score"),
           actions: [
             AutoCompleteButton(store: store),
             RefreshButton(store: store),

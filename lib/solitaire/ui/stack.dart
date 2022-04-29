@@ -1,3 +1,4 @@
+import 'package:af_games/solitaire/models/playing_card/playing_card.dart';
 import 'package:af_games/solitaire/solitaire_action/solitaire_action.dart';
 import 'package:af_games/solitaire/solitaire_store.dart';
 import 'package:af_games/solitaire/ui/card.dart';
@@ -10,14 +11,24 @@ class StackWidget extends HookWidget {
 
   final int index;
 
+  double calculateOffset(int index, List<PlayingCard> cards) {
+    const visibleOffset = 30.0;
+    const hiddenOffset = 5.0;
+    var lastHiddenIndex = cards.lastIndexWhere((e) => e.state is FaceDown);
+    if (lastHiddenIndex == -1) return index * visibleOffset;
+    var offset = lastHiddenIndex >= index
+        ? hiddenOffset * index
+        : (lastHiddenIndex * hiddenOffset) + ((index - lastHiddenIndex - 1) * visibleOffset);
+
+    return offset;
+  }
+
   @override
   Widget build(BuildContext context) {
     final store = inject<SolitaireStore>();
     final stackState = store.state.cardStacks.elementAt(index);
     final stack = useValueListenable(stackState);
     final cards = stack.cards;
-
-    const offset = 15.0;
 
     return Padding(
       padding: const EdgeInsets.all(8.0),
@@ -40,7 +51,7 @@ class StackWidget extends HookWidget {
               ),
             for (var i = 0; i < cards.length; i++)
               Positioned(
-                top: i * offset,
+                top: calculateOffset(i, cards),
                 child: PlayingCardWidget(
                   cards.elementAt(i),
                   onDoubleTapped: (card) {
