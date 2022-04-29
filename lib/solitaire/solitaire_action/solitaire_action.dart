@@ -17,6 +17,8 @@ class SolitaireAction with _$SolitaireAction {
   const factory SolitaireAction.selectCard(
       PlayingCard card, CardSource source) = _SolitaireActionSelectCard;
 
+  const factory SolitaireAction.unselectCard(PlayingCard card, CardSource source) = _SolitaireActionUnselectCard;
+
   const factory SolitaireAction.moveCard(
           PlayingCard card, CardSource source, CardDestination destination) =
       _SolitaireActionMoveCard;

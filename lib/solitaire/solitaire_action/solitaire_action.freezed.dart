@@ -39,6 +39,14 @@ class _$SolitaireActionTearOff {
     );
   }
 
+  _SolitaireActionUnselectCard unselectCard(
+      PlayingCard card, CardSource source) {
+    return _SolitaireActionUnselectCard(
+      card,
+      source,
+    );
+  }
+
   _SolitaireActionMoveCard moveCard(
       PlayingCard card, CardSource source, CardDestination destination) {
     return _SolitaireActionMoveCard(
@@ -68,6 +76,7 @@ mixin _$SolitaireAction {
     required TResult Function() newGame,
     required TResult Function(PlayingCard card, CardSource source) autoMove,
     required TResult Function(PlayingCard card, CardSource source) selectCard,
+    required TResult Function(PlayingCard card, CardSource source) unselectCard,
     required TResult Function(
             PlayingCard card, CardSource source, CardDestination destination)
         moveCard,
@@ -81,6 +90,7 @@ mixin _$SolitaireAction {
     TResult Function()? newGame,
     TResult Function(PlayingCard card, CardSource source)? autoMove,
     TResult Function(PlayingCard card, CardSource source)? selectCard,
+    TResult Function(PlayingCard card, CardSource source)? unselectCard,
     TResult Function(
             PlayingCard card, CardSource source, CardDestination destination)?
         moveCard,
@@ -94,6 +104,7 @@ mixin _$SolitaireAction {
     TResult Function()? newGame,
     TResult Function(PlayingCard card, CardSource source)? autoMove,
     TResult Function(PlayingCard card, CardSource source)? selectCard,
+    TResult Function(PlayingCard card, CardSource source)? unselectCard,
     TResult Function(
             PlayingCard card, CardSource source, CardDestination destination)?
         moveCard,
@@ -108,6 +119,7 @@ mixin _$SolitaireAction {
     required TResult Function(SolitaireActionsNewGame value) newGame,
     required TResult Function(_SolitaireActionAutoMove value) autoMove,
     required TResult Function(_SolitaireActionSelectCard value) selectCard,
+    required TResult Function(_SolitaireActionUnselectCard value) unselectCard,
     required TResult Function(_SolitaireActionMoveCard value) moveCard,
     required TResult Function(SolitaireActionAutoComplete value) autoComplete,
     required TResult Function(SolitaireActionUndo value) undo,
@@ -119,6 +131,7 @@ mixin _$SolitaireAction {
     TResult Function(SolitaireActionsNewGame value)? newGame,
     TResult Function(_SolitaireActionAutoMove value)? autoMove,
     TResult Function(_SolitaireActionSelectCard value)? selectCard,
+    TResult Function(_SolitaireActionUnselectCard value)? unselectCard,
     TResult Function(_SolitaireActionMoveCard value)? moveCard,
     TResult Function(SolitaireActionAutoComplete value)? autoComplete,
     TResult Function(SolitaireActionUndo value)? undo,
@@ -130,6 +143,7 @@ mixin _$SolitaireAction {
     TResult Function(SolitaireActionsNewGame value)? newGame,
     TResult Function(_SolitaireActionAutoMove value)? autoMove,
     TResult Function(_SolitaireActionSelectCard value)? selectCard,
+    TResult Function(_SolitaireActionUnselectCard value)? unselectCard,
     TResult Function(_SolitaireActionMoveCard value)? moveCard,
     TResult Function(SolitaireActionAutoComplete value)? autoComplete,
     TResult Function(SolitaireActionUndo value)? undo,
@@ -200,6 +214,7 @@ class _$_SolitaireActionDraw implements _SolitaireActionDraw {
     required TResult Function() newGame,
     required TResult Function(PlayingCard card, CardSource source) autoMove,
     required TResult Function(PlayingCard card, CardSource source) selectCard,
+    required TResult Function(PlayingCard card, CardSource source) unselectCard,
     required TResult Function(
             PlayingCard card, CardSource source, CardDestination destination)
         moveCard,
@@ -216,6 +231,7 @@ class _$_SolitaireActionDraw implements _SolitaireActionDraw {
     TResult Function()? newGame,
     TResult Function(PlayingCard card, CardSource source)? autoMove,
     TResult Function(PlayingCard card, CardSource source)? selectCard,
+    TResult Function(PlayingCard card, CardSource source)? unselectCard,
     TResult Function(
             PlayingCard card, CardSource source, CardDestination destination)?
         moveCard,
@@ -232,6 +248,7 @@ class _$_SolitaireActionDraw implements _SolitaireActionDraw {
     TResult Function()? newGame,
     TResult Function(PlayingCard card, CardSource source)? autoMove,
     TResult Function(PlayingCard card, CardSource source)? selectCard,
+    TResult Function(PlayingCard card, CardSource source)? unselectCard,
     TResult Function(
             PlayingCard card, CardSource source, CardDestination destination)?
         moveCard,
@@ -252,6 +269,7 @@ class _$_SolitaireActionDraw implements _SolitaireActionDraw {
     required TResult Function(SolitaireActionsNewGame value) newGame,
     required TResult Function(_SolitaireActionAutoMove value) autoMove,
     required TResult Function(_SolitaireActionSelectCard value) selectCard,
+    required TResult Function(_SolitaireActionUnselectCard value) unselectCard,
     required TResult Function(_SolitaireActionMoveCard value) moveCard,
     required TResult Function(SolitaireActionAutoComplete value) autoComplete,
     required TResult Function(SolitaireActionUndo value) undo,
@@ -266,6 +284,7 @@ class _$_SolitaireActionDraw implements _SolitaireActionDraw {
     TResult Function(SolitaireActionsNewGame value)? newGame,
     TResult Function(_SolitaireActionAutoMove value)? autoMove,
     TResult Function(_SolitaireActionSelectCard value)? selectCard,
+    TResult Function(_SolitaireActionUnselectCard value)? unselectCard,
     TResult Function(_SolitaireActionMoveCard value)? moveCard,
     TResult Function(SolitaireActionAutoComplete value)? autoComplete,
     TResult Function(SolitaireActionUndo value)? undo,
@@ -280,6 +299,7 @@ class _$_SolitaireActionDraw implements _SolitaireActionDraw {
     TResult Function(SolitaireActionsNewGame value)? newGame,
     TResult Function(_SolitaireActionAutoMove value)? autoMove,
     TResult Function(_SolitaireActionSelectCard value)? selectCard,
+    TResult Function(_SolitaireActionUnselectCard value)? unselectCard,
     TResult Function(_SolitaireActionMoveCard value)? moveCard,
     TResult Function(SolitaireActionAutoComplete value)? autoComplete,
     TResult Function(SolitaireActionUndo value)? undo,
@@ -341,6 +361,7 @@ class _$SolitaireActionsNewGame implements SolitaireActionsNewGame {
     required TResult Function() newGame,
     required TResult Function(PlayingCard card, CardSource source) autoMove,
     required TResult Function(PlayingCard card, CardSource source) selectCard,
+    required TResult Function(PlayingCard card, CardSource source) unselectCard,
     required TResult Function(
             PlayingCard card, CardSource source, CardDestination destination)
         moveCard,
@@ -357,6 +378,7 @@ class _$SolitaireActionsNewGame implements SolitaireActionsNewGame {
     TResult Function()? newGame,
     TResult Function(PlayingCard card, CardSource source)? autoMove,
     TResult Function(PlayingCard card, CardSource source)? selectCard,
+    TResult Function(PlayingCard card, CardSource source)? unselectCard,
     TResult Function(
             PlayingCard card, CardSource source, CardDestination destination)?
         moveCard,
@@ -373,6 +395,7 @@ class _$SolitaireActionsNewGame implements SolitaireActionsNewGame {
     TResult Function()? newGame,
     TResult Function(PlayingCard card, CardSource source)? autoMove,
     TResult Function(PlayingCard card, CardSource source)? selectCard,
+    TResult Function(PlayingCard card, CardSource source)? unselectCard,
     TResult Function(
             PlayingCard card, CardSource source, CardDestination destination)?
         moveCard,
@@ -393,6 +416,7 @@ class _$SolitaireActionsNewGame implements SolitaireActionsNewGame {
     required TResult Function(SolitaireActionsNewGame value) newGame,
     required TResult Function(_SolitaireActionAutoMove value) autoMove,
     required TResult Function(_SolitaireActionSelectCard value) selectCard,
+    required TResult Function(_SolitaireActionUnselectCard value) unselectCard,
     required TResult Function(_SolitaireActionMoveCard value) moveCard,
     required TResult Function(SolitaireActionAutoComplete value) autoComplete,
     required TResult Function(SolitaireActionUndo value) undo,
@@ -407,6 +431,7 @@ class _$SolitaireActionsNewGame implements SolitaireActionsNewGame {
     TResult Function(SolitaireActionsNewGame value)? newGame,
     TResult Function(_SolitaireActionAutoMove value)? autoMove,
     TResult Function(_SolitaireActionSelectCard value)? selectCard,
+    TResult Function(_SolitaireActionUnselectCard value)? unselectCard,
     TResult Function(_SolitaireActionMoveCard value)? moveCard,
     TResult Function(SolitaireActionAutoComplete value)? autoComplete,
     TResult Function(SolitaireActionUndo value)? undo,
@@ -421,6 +446,7 @@ class _$SolitaireActionsNewGame implements SolitaireActionsNewGame {
     TResult Function(SolitaireActionsNewGame value)? newGame,
     TResult Function(_SolitaireActionAutoMove value)? autoMove,
     TResult Function(_SolitaireActionSelectCard value)? selectCard,
+    TResult Function(_SolitaireActionUnselectCard value)? unselectCard,
     TResult Function(_SolitaireActionMoveCard value)? moveCard,
     TResult Function(SolitaireActionAutoComplete value)? autoComplete,
     TResult Function(SolitaireActionUndo value)? undo,
@@ -527,6 +553,7 @@ class _$_SolitaireActionAutoMove implements _SolitaireActionAutoMove {
     required TResult Function() newGame,
     required TResult Function(PlayingCard card, CardSource source) autoMove,
     required TResult Function(PlayingCard card, CardSource source) selectCard,
+    required TResult Function(PlayingCard card, CardSource source) unselectCard,
     required TResult Function(
             PlayingCard card, CardSource source, CardDestination destination)
         moveCard,
@@ -543,6 +570,7 @@ class _$_SolitaireActionAutoMove implements _SolitaireActionAutoMove {
     TResult Function()? newGame,
     TResult Function(PlayingCard card, CardSource source)? autoMove,
     TResult Function(PlayingCard card, CardSource source)? selectCard,
+    TResult Function(PlayingCard card, CardSource source)? unselectCard,
     TResult Function(
             PlayingCard card, CardSource source, CardDestination destination)?
         moveCard,
@@ -559,6 +587,7 @@ class _$_SolitaireActionAutoMove implements _SolitaireActionAutoMove {
     TResult Function()? newGame,
     TResult Function(PlayingCard card, CardSource source)? autoMove,
     TResult Function(PlayingCard card, CardSource source)? selectCard,
+    TResult Function(PlayingCard card, CardSource source)? unselectCard,
     TResult Function(
             PlayingCard card, CardSource source, CardDestination destination)?
         moveCard,
@@ -579,6 +608,7 @@ class _$_SolitaireActionAutoMove implements _SolitaireActionAutoMove {
     required TResult Function(SolitaireActionsNewGame value) newGame,
     required TResult Function(_SolitaireActionAutoMove value) autoMove,
     required TResult Function(_SolitaireActionSelectCard value) selectCard,
+    required TResult Function(_SolitaireActionUnselectCard value) unselectCard,
     required TResult Function(_SolitaireActionMoveCard value) moveCard,
     required TResult Function(SolitaireActionAutoComplete value) autoComplete,
     required TResult Function(SolitaireActionUndo value) undo,
@@ -593,6 +623,7 @@ class _$_SolitaireActionAutoMove implements _SolitaireActionAutoMove {
     TResult Function(SolitaireActionsNewGame value)? newGame,
     TResult Function(_SolitaireActionAutoMove value)? autoMove,
     TResult Function(_SolitaireActionSelectCard value)? selectCard,
+    TResult Function(_SolitaireActionUnselectCard value)? unselectCard,
     TResult Function(_SolitaireActionMoveCard value)? moveCard,
     TResult Function(SolitaireActionAutoComplete value)? autoComplete,
     TResult Function(SolitaireActionUndo value)? undo,
@@ -607,6 +638,7 @@ class _$_SolitaireActionAutoMove implements _SolitaireActionAutoMove {
     TResult Function(SolitaireActionsNewGame value)? newGame,
     TResult Function(_SolitaireActionAutoMove value)? autoMove,
     TResult Function(_SolitaireActionSelectCard value)? selectCard,
+    TResult Function(_SolitaireActionUnselectCard value)? unselectCard,
     TResult Function(_SolitaireActionMoveCard value)? moveCard,
     TResult Function(SolitaireActionAutoComplete value)? autoComplete,
     TResult Function(SolitaireActionUndo value)? undo,
@@ -721,6 +753,7 @@ class _$_SolitaireActionSelectCard implements _SolitaireActionSelectCard {
     required TResult Function() newGame,
     required TResult Function(PlayingCard card, CardSource source) autoMove,
     required TResult Function(PlayingCard card, CardSource source) selectCard,
+    required TResult Function(PlayingCard card, CardSource source) unselectCard,
     required TResult Function(
             PlayingCard card, CardSource source, CardDestination destination)
         moveCard,
@@ -737,6 +770,7 @@ class _$_SolitaireActionSelectCard implements _SolitaireActionSelectCard {
     TResult Function()? newGame,
     TResult Function(PlayingCard card, CardSource source)? autoMove,
     TResult Function(PlayingCard card, CardSource source)? selectCard,
+    TResult Function(PlayingCard card, CardSource source)? unselectCard,
     TResult Function(
             PlayingCard card, CardSource source, CardDestination destination)?
         moveCard,
@@ -753,6 +787,7 @@ class _$_SolitaireActionSelectCard implements _SolitaireActionSelectCard {
     TResult Function()? newGame,
     TResult Function(PlayingCard card, CardSource source)? autoMove,
     TResult Function(PlayingCard card, CardSource source)? selectCard,
+    TResult Function(PlayingCard card, CardSource source)? unselectCard,
     TResult Function(
             PlayingCard card, CardSource source, CardDestination destination)?
         moveCard,
@@ -773,6 +808,7 @@ class _$_SolitaireActionSelectCard implements _SolitaireActionSelectCard {
     required TResult Function(SolitaireActionsNewGame value) newGame,
     required TResult Function(_SolitaireActionAutoMove value) autoMove,
     required TResult Function(_SolitaireActionSelectCard value) selectCard,
+    required TResult Function(_SolitaireActionUnselectCard value) unselectCard,
     required TResult Function(_SolitaireActionMoveCard value) moveCard,
     required TResult Function(SolitaireActionAutoComplete value) autoComplete,
     required TResult Function(SolitaireActionUndo value) undo,
@@ -787,6 +823,7 @@ class _$_SolitaireActionSelectCard implements _SolitaireActionSelectCard {
     TResult Function(SolitaireActionsNewGame value)? newGame,
     TResult Function(_SolitaireActionAutoMove value)? autoMove,
     TResult Function(_SolitaireActionSelectCard value)? selectCard,
+    TResult Function(_SolitaireActionUnselectCard value)? unselectCard,
     TResult Function(_SolitaireActionMoveCard value)? moveCard,
     TResult Function(SolitaireActionAutoComplete value)? autoComplete,
     TResult Function(SolitaireActionUndo value)? undo,
@@ -801,6 +838,7 @@ class _$_SolitaireActionSelectCard implements _SolitaireActionSelectCard {
     TResult Function(SolitaireActionsNewGame value)? newGame,
     TResult Function(_SolitaireActionAutoMove value)? autoMove,
     TResult Function(_SolitaireActionSelectCard value)? selectCard,
+    TResult Function(_SolitaireActionUnselectCard value)? unselectCard,
     TResult Function(_SolitaireActionMoveCard value)? moveCard,
     TResult Function(SolitaireActionAutoComplete value)? autoComplete,
     TResult Function(SolitaireActionUndo value)? undo,
@@ -821,6 +859,207 @@ abstract class _SolitaireActionSelectCard implements SolitaireAction {
   CardSource get source;
   @JsonKey(ignore: true)
   _$SolitaireActionSelectCardCopyWith<_SolitaireActionSelectCard>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$SolitaireActionUnselectCardCopyWith<$Res> {
+  factory _$SolitaireActionUnselectCardCopyWith(
+          _SolitaireActionUnselectCard value,
+          $Res Function(_SolitaireActionUnselectCard) then) =
+      __$SolitaireActionUnselectCardCopyWithImpl<$Res>;
+  $Res call({PlayingCard card, CardSource source});
+
+  $PlayingCardCopyWith<$Res> get card;
+}
+
+/// @nodoc
+class __$SolitaireActionUnselectCardCopyWithImpl<$Res>
+    extends _$SolitaireActionCopyWithImpl<$Res>
+    implements _$SolitaireActionUnselectCardCopyWith<$Res> {
+  __$SolitaireActionUnselectCardCopyWithImpl(
+      _SolitaireActionUnselectCard _value,
+      $Res Function(_SolitaireActionUnselectCard) _then)
+      : super(_value, (v) => _then(v as _SolitaireActionUnselectCard));
+
+  @override
+  _SolitaireActionUnselectCard get _value =>
+      super._value as _SolitaireActionUnselectCard;
+
+  @override
+  $Res call({
+    Object? card = freezed,
+    Object? source = freezed,
+  }) {
+    return _then(_SolitaireActionUnselectCard(
+      card == freezed
+          ? _value.card
+          : card // ignore: cast_nullable_to_non_nullable
+              as PlayingCard,
+      source == freezed
+          ? _value.source
+          : source // ignore: cast_nullable_to_non_nullable
+              as CardSource,
+    ));
+  }
+
+  @override
+  $PlayingCardCopyWith<$Res> get card {
+    return $PlayingCardCopyWith<$Res>(_value.card, (value) {
+      return _then(_value.copyWith(card: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$_SolitaireActionUnselectCard implements _SolitaireActionUnselectCard {
+  const _$_SolitaireActionUnselectCard(this.card, this.source);
+
+  @override
+  final PlayingCard card;
+  @override
+  final CardSource source;
+
+  @override
+  String toString() {
+    return 'SolitaireAction.unselectCard(card: $card, source: $source)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _SolitaireActionUnselectCard &&
+            const DeepCollectionEquality().equals(other.card, card) &&
+            const DeepCollectionEquality().equals(other.source, source));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(card),
+      const DeepCollectionEquality().hash(source));
+
+  @JsonKey(ignore: true)
+  @override
+  _$SolitaireActionUnselectCardCopyWith<_SolitaireActionUnselectCard>
+      get copyWith => __$SolitaireActionUnselectCardCopyWithImpl<
+          _SolitaireActionUnselectCard>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() draw,
+    required TResult Function() newGame,
+    required TResult Function(PlayingCard card, CardSource source) autoMove,
+    required TResult Function(PlayingCard card, CardSource source) selectCard,
+    required TResult Function(PlayingCard card, CardSource source) unselectCard,
+    required TResult Function(
+            PlayingCard card, CardSource source, CardDestination destination)
+        moveCard,
+    required TResult Function() autoComplete,
+    required TResult Function() undo,
+  }) {
+    return unselectCard(card, source);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? draw,
+    TResult Function()? newGame,
+    TResult Function(PlayingCard card, CardSource source)? autoMove,
+    TResult Function(PlayingCard card, CardSource source)? selectCard,
+    TResult Function(PlayingCard card, CardSource source)? unselectCard,
+    TResult Function(
+            PlayingCard card, CardSource source, CardDestination destination)?
+        moveCard,
+    TResult Function()? autoComplete,
+    TResult Function()? undo,
+  }) {
+    return unselectCard?.call(card, source);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? draw,
+    TResult Function()? newGame,
+    TResult Function(PlayingCard card, CardSource source)? autoMove,
+    TResult Function(PlayingCard card, CardSource source)? selectCard,
+    TResult Function(PlayingCard card, CardSource source)? unselectCard,
+    TResult Function(
+            PlayingCard card, CardSource source, CardDestination destination)?
+        moveCard,
+    TResult Function()? autoComplete,
+    TResult Function()? undo,
+    required TResult orElse(),
+  }) {
+    if (unselectCard != null) {
+      return unselectCard(card, source);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SolitaireActionDraw value) draw,
+    required TResult Function(SolitaireActionsNewGame value) newGame,
+    required TResult Function(_SolitaireActionAutoMove value) autoMove,
+    required TResult Function(_SolitaireActionSelectCard value) selectCard,
+    required TResult Function(_SolitaireActionUnselectCard value) unselectCard,
+    required TResult Function(_SolitaireActionMoveCard value) moveCard,
+    required TResult Function(SolitaireActionAutoComplete value) autoComplete,
+    required TResult Function(SolitaireActionUndo value) undo,
+  }) {
+    return unselectCard(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SolitaireActionDraw value)? draw,
+    TResult Function(SolitaireActionsNewGame value)? newGame,
+    TResult Function(_SolitaireActionAutoMove value)? autoMove,
+    TResult Function(_SolitaireActionSelectCard value)? selectCard,
+    TResult Function(_SolitaireActionUnselectCard value)? unselectCard,
+    TResult Function(_SolitaireActionMoveCard value)? moveCard,
+    TResult Function(SolitaireActionAutoComplete value)? autoComplete,
+    TResult Function(SolitaireActionUndo value)? undo,
+  }) {
+    return unselectCard?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SolitaireActionDraw value)? draw,
+    TResult Function(SolitaireActionsNewGame value)? newGame,
+    TResult Function(_SolitaireActionAutoMove value)? autoMove,
+    TResult Function(_SolitaireActionSelectCard value)? selectCard,
+    TResult Function(_SolitaireActionUnselectCard value)? unselectCard,
+    TResult Function(_SolitaireActionMoveCard value)? moveCard,
+    TResult Function(SolitaireActionAutoComplete value)? autoComplete,
+    TResult Function(SolitaireActionUndo value)? undo,
+    required TResult orElse(),
+  }) {
+    if (unselectCard != null) {
+      return unselectCard(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SolitaireActionUnselectCard implements SolitaireAction {
+  const factory _SolitaireActionUnselectCard(
+      PlayingCard card, CardSource source) = _$_SolitaireActionUnselectCard;
+
+  PlayingCard get card;
+  CardSource get source;
+  @JsonKey(ignore: true)
+  _$SolitaireActionUnselectCardCopyWith<_SolitaireActionUnselectCard>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -924,6 +1163,7 @@ class _$_SolitaireActionMoveCard implements _SolitaireActionMoveCard {
     required TResult Function() newGame,
     required TResult Function(PlayingCard card, CardSource source) autoMove,
     required TResult Function(PlayingCard card, CardSource source) selectCard,
+    required TResult Function(PlayingCard card, CardSource source) unselectCard,
     required TResult Function(
             PlayingCard card, CardSource source, CardDestination destination)
         moveCard,
@@ -940,6 +1180,7 @@ class _$_SolitaireActionMoveCard implements _SolitaireActionMoveCard {
     TResult Function()? newGame,
     TResult Function(PlayingCard card, CardSource source)? autoMove,
     TResult Function(PlayingCard card, CardSource source)? selectCard,
+    TResult Function(PlayingCard card, CardSource source)? unselectCard,
     TResult Function(
             PlayingCard card, CardSource source, CardDestination destination)?
         moveCard,
@@ -956,6 +1197,7 @@ class _$_SolitaireActionMoveCard implements _SolitaireActionMoveCard {
     TResult Function()? newGame,
     TResult Function(PlayingCard card, CardSource source)? autoMove,
     TResult Function(PlayingCard card, CardSource source)? selectCard,
+    TResult Function(PlayingCard card, CardSource source)? unselectCard,
     TResult Function(
             PlayingCard card, CardSource source, CardDestination destination)?
         moveCard,
@@ -976,6 +1218,7 @@ class _$_SolitaireActionMoveCard implements _SolitaireActionMoveCard {
     required TResult Function(SolitaireActionsNewGame value) newGame,
     required TResult Function(_SolitaireActionAutoMove value) autoMove,
     required TResult Function(_SolitaireActionSelectCard value) selectCard,
+    required TResult Function(_SolitaireActionUnselectCard value) unselectCard,
     required TResult Function(_SolitaireActionMoveCard value) moveCard,
     required TResult Function(SolitaireActionAutoComplete value) autoComplete,
     required TResult Function(SolitaireActionUndo value) undo,
@@ -990,6 +1233,7 @@ class _$_SolitaireActionMoveCard implements _SolitaireActionMoveCard {
     TResult Function(SolitaireActionsNewGame value)? newGame,
     TResult Function(_SolitaireActionAutoMove value)? autoMove,
     TResult Function(_SolitaireActionSelectCard value)? selectCard,
+    TResult Function(_SolitaireActionUnselectCard value)? unselectCard,
     TResult Function(_SolitaireActionMoveCard value)? moveCard,
     TResult Function(SolitaireActionAutoComplete value)? autoComplete,
     TResult Function(SolitaireActionUndo value)? undo,
@@ -1004,6 +1248,7 @@ class _$_SolitaireActionMoveCard implements _SolitaireActionMoveCard {
     TResult Function(SolitaireActionsNewGame value)? newGame,
     TResult Function(_SolitaireActionAutoMove value)? autoMove,
     TResult Function(_SolitaireActionSelectCard value)? selectCard,
+    TResult Function(_SolitaireActionUnselectCard value)? unselectCard,
     TResult Function(_SolitaireActionMoveCard value)? moveCard,
     TResult Function(SolitaireActionAutoComplete value)? autoComplete,
     TResult Function(SolitaireActionUndo value)? undo,
@@ -1077,6 +1322,7 @@ class _$SolitaireActionAutoComplete implements SolitaireActionAutoComplete {
     required TResult Function() newGame,
     required TResult Function(PlayingCard card, CardSource source) autoMove,
     required TResult Function(PlayingCard card, CardSource source) selectCard,
+    required TResult Function(PlayingCard card, CardSource source) unselectCard,
     required TResult Function(
             PlayingCard card, CardSource source, CardDestination destination)
         moveCard,
@@ -1093,6 +1339,7 @@ class _$SolitaireActionAutoComplete implements SolitaireActionAutoComplete {
     TResult Function()? newGame,
     TResult Function(PlayingCard card, CardSource source)? autoMove,
     TResult Function(PlayingCard card, CardSource source)? selectCard,
+    TResult Function(PlayingCard card, CardSource source)? unselectCard,
     TResult Function(
             PlayingCard card, CardSource source, CardDestination destination)?
         moveCard,
@@ -1109,6 +1356,7 @@ class _$SolitaireActionAutoComplete implements SolitaireActionAutoComplete {
     TResult Function()? newGame,
     TResult Function(PlayingCard card, CardSource source)? autoMove,
     TResult Function(PlayingCard card, CardSource source)? selectCard,
+    TResult Function(PlayingCard card, CardSource source)? unselectCard,
     TResult Function(
             PlayingCard card, CardSource source, CardDestination destination)?
         moveCard,
@@ -1129,6 +1377,7 @@ class _$SolitaireActionAutoComplete implements SolitaireActionAutoComplete {
     required TResult Function(SolitaireActionsNewGame value) newGame,
     required TResult Function(_SolitaireActionAutoMove value) autoMove,
     required TResult Function(_SolitaireActionSelectCard value) selectCard,
+    required TResult Function(_SolitaireActionUnselectCard value) unselectCard,
     required TResult Function(_SolitaireActionMoveCard value) moveCard,
     required TResult Function(SolitaireActionAutoComplete value) autoComplete,
     required TResult Function(SolitaireActionUndo value) undo,
@@ -1143,6 +1392,7 @@ class _$SolitaireActionAutoComplete implements SolitaireActionAutoComplete {
     TResult Function(SolitaireActionsNewGame value)? newGame,
     TResult Function(_SolitaireActionAutoMove value)? autoMove,
     TResult Function(_SolitaireActionSelectCard value)? selectCard,
+    TResult Function(_SolitaireActionUnselectCard value)? unselectCard,
     TResult Function(_SolitaireActionMoveCard value)? moveCard,
     TResult Function(SolitaireActionAutoComplete value)? autoComplete,
     TResult Function(SolitaireActionUndo value)? undo,
@@ -1157,6 +1407,7 @@ class _$SolitaireActionAutoComplete implements SolitaireActionAutoComplete {
     TResult Function(SolitaireActionsNewGame value)? newGame,
     TResult Function(_SolitaireActionAutoMove value)? autoMove,
     TResult Function(_SolitaireActionSelectCard value)? selectCard,
+    TResult Function(_SolitaireActionUnselectCard value)? unselectCard,
     TResult Function(_SolitaireActionMoveCard value)? moveCard,
     TResult Function(SolitaireActionAutoComplete value)? autoComplete,
     TResult Function(SolitaireActionUndo value)? undo,
@@ -1218,6 +1469,7 @@ class _$SolitaireActionUndo implements SolitaireActionUndo {
     required TResult Function() newGame,
     required TResult Function(PlayingCard card, CardSource source) autoMove,
     required TResult Function(PlayingCard card, CardSource source) selectCard,
+    required TResult Function(PlayingCard card, CardSource source) unselectCard,
     required TResult Function(
             PlayingCard card, CardSource source, CardDestination destination)
         moveCard,
@@ -1234,6 +1486,7 @@ class _$SolitaireActionUndo implements SolitaireActionUndo {
     TResult Function()? newGame,
     TResult Function(PlayingCard card, CardSource source)? autoMove,
     TResult Function(PlayingCard card, CardSource source)? selectCard,
+    TResult Function(PlayingCard card, CardSource source)? unselectCard,
     TResult Function(
             PlayingCard card, CardSource source, CardDestination destination)?
         moveCard,
@@ -1250,6 +1503,7 @@ class _$SolitaireActionUndo implements SolitaireActionUndo {
     TResult Function()? newGame,
     TResult Function(PlayingCard card, CardSource source)? autoMove,
     TResult Function(PlayingCard card, CardSource source)? selectCard,
+    TResult Function(PlayingCard card, CardSource source)? unselectCard,
     TResult Function(
             PlayingCard card, CardSource source, CardDestination destination)?
         moveCard,
@@ -1270,6 +1524,7 @@ class _$SolitaireActionUndo implements SolitaireActionUndo {
     required TResult Function(SolitaireActionsNewGame value) newGame,
     required TResult Function(_SolitaireActionAutoMove value) autoMove,
     required TResult Function(_SolitaireActionSelectCard value) selectCard,
+    required TResult Function(_SolitaireActionUnselectCard value) unselectCard,
     required TResult Function(_SolitaireActionMoveCard value) moveCard,
     required TResult Function(SolitaireActionAutoComplete value) autoComplete,
     required TResult Function(SolitaireActionUndo value) undo,
@@ -1284,6 +1539,7 @@ class _$SolitaireActionUndo implements SolitaireActionUndo {
     TResult Function(SolitaireActionsNewGame value)? newGame,
     TResult Function(_SolitaireActionAutoMove value)? autoMove,
     TResult Function(_SolitaireActionSelectCard value)? selectCard,
+    TResult Function(_SolitaireActionUnselectCard value)? unselectCard,
     TResult Function(_SolitaireActionMoveCard value)? moveCard,
     TResult Function(SolitaireActionAutoComplete value)? autoComplete,
     TResult Function(SolitaireActionUndo value)? undo,
@@ -1298,6 +1554,7 @@ class _$SolitaireActionUndo implements SolitaireActionUndo {
     TResult Function(SolitaireActionsNewGame value)? newGame,
     TResult Function(_SolitaireActionAutoMove value)? autoMove,
     TResult Function(_SolitaireActionSelectCard value)? selectCard,
+    TResult Function(_SolitaireActionUnselectCard value)? unselectCard,
     TResult Function(_SolitaireActionMoveCard value)? moveCard,
     TResult Function(SolitaireActionAutoComplete value)? autoComplete,
     TResult Function(SolitaireActionUndo value)? undo,

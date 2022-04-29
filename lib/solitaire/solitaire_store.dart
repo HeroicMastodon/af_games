@@ -78,6 +78,11 @@ class SolitaireStore {
 
         return _undoAction(actionToUndo);
       },
+      unselectCard: (PlayingCard card, CardSource source) {
+        state.unSelectCard(card, source);
+
+        return const ActionResult.success();
+      },
     );
 
     if (action is! SolitaireActionUndo &&
@@ -111,6 +116,9 @@ class SolitaireStore {
         return const ActionResult.failed("Cannot undo auto completion.");
       },
       undo: () => const ActionResult.failed("Cannot undo an undo."),
+      unselectCard: (PlayingCard card, CardSource source) {
+        return const ActionResult.failed("not implemented");
+      },
     );
   }
 
